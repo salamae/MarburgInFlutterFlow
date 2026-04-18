@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>CFBundleDevelopmentRegion</key>
+    <string>$(DEVELOPMENT_LANGUAGE)</string>
+    <key>CFBundleDisplayName</key>
+    <string>MarburgInFlutterFlow</string>
+    <key>CFBundleExecutable</key>
+    <string>$(EXECUTABLE_NAME)</string>
+    <key>CFBundleIdentifier</key>
+    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleName</key>
+    <string>MarburgInFlutterFlow</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleShortVersionString</key>
+    <string>$(FLUTTER_BUILD_NAME)</string>
+    <key>CFBundleSignature</key>
+    <string>????</string>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>com.googleusercontent.apps.975088002770-d5rbv7odbo43n1gaksmlrrk7c507c2sr</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleTypeRole</key>
+        <string>Editor</string>
+        <key>CFBundleURLName</key>
+        <string>marburginflutterflow.com</string>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>marburginflutterflow</string>
+        </array>
+      </dict>
+    </array>
+    <key>FlutterDeepLinkingEnabled</key>
+    <true/>
+    <key>CFBundleVersion</key>
+    <string>$(FLUTTER_BUILD_NUMBER)</string>
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+    <key>PermissionGroupNotification</key>
+    <string>test</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>test</string>
+    <!-- Start of NSCalendarsUsageDescription -->
+    <key>NSCalendarsUsageDescription</key>
+    <string>Wir benötigen Zugriff, um Termine in deinen Kalender zu speichern.</string>
+    <key>NSCalendarsWriteOnlyAccessUsageDescription</key>
+    <string>Wir benötigen Zugriff, um Termine zu deinem Kalender hinzuzufügen.</string>
+    <key>NSCalendarsFullAccessUsageDescription</key>
+    <string>Wir benötigen Zugriff, um Termine in deinem Kalender zu verwalten.</string>
+    <key>NSContactsUsageDescription</key>
+    <string>Wir benötigen Zugriff, um Adressen für Termine vorzuschlagen.</string>
+    <!-- End of NSCalendarsUsageDescription -->
+    <!-- Start of NSLocationWhenInUseUsageDescription -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Wir benötigen deinen Standort für Events in deiner Nähe</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Wir benötigen deinen Standort für Events</string>
+    <!-- End of NSLocationWhenInUseUsageDescription -->
+    <!-- Start of NSUserNotificationUsageDescription -->
+    <key>NSUserNotificationUsageDescription</key>
+    <string>Wir senden dir Event-Benachrichtigungen</string>
+    <!-- End of NSUserNotificationUsageDescription -->
+    <key>UILaunchStoryboardName</key>
+    <string>LaunchScreen</string>
+    <key>UIMainStoryboardFile</key>
+    <string>Main</string>
+    <key>UISupportedInterfaceOrientations</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+      <string>UIInterfaceOrientationLandscapeLeft</string>
+      <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+    <key>UISupportedInterfaceOrientations~ipad</key>
+    <array>
+      <string>UIInterfaceOrientationPortrait</string>
+      <string>UIInterfaceOrientationPortraitUpsideDown</string>
+      <string>UIInterfaceOrientationLandscapeLeft</string>
+      <string>UIInterfaceOrientationLandscapeRight</string>
+    </array>
+    <key>UIViewControllerBasedStatusBarAppearance</key>
+    <false/>
+  </dict>
+</plist>

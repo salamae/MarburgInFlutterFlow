@@ -1,0 +1,178 @@
+{
+  "project_info": {
+    "project_number": "975088002770",
+    "project_id": "marburg-ee870",
+    "storage_bucket": "marburg-ee870.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975088002770:android:3b75c978264bbc65d46f0b",
+        "android_client_info": {
+          "package_name": "com.mellow.marburg_an"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975088002770-fmr2lqb5ioh7rprf61a9n2par2cckstk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mellow.marburg_an",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "975088002770-i56n9s84r0hghfa6rgmhk9jrkkv9bchq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFgtTYCAqyhXLL51DdfTL4aNFJrC4dU9Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975088002770-i56n9s84r0hghfa6rgmhk9jrkkv9bchq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "975088002770-30srgjmoc2h3qg5bovhtjksqt51uen2f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.test"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975088002770:android:031debf9f5b19ee0d46f0b",
+        "android_client_info": {
+          "package_name": "com.mycompany.marburgflutterflow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975088002770-te1o8bv3kkvpcdqnfo988d12ahqfjfnf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.marburgflutterflow",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "975088002770-i56n9s84r0hghfa6rgmhk9jrkkv9bchq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFgtTYCAqyhXLL51DdfTL4aNFJrC4dU9Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975088002770-i56n9s84r0hghfa6rgmhk9jrkkv9bchq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "975088002770-30srgjmoc2h3qg5bovhtjksqt51uen2f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.test"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975088002770:android:f0f4daead48844b0d46f0b",
+        "android_client_info": {
+          "package_name": "com.mycompany.marburgflutterflowtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975088002770-c6ppur7eln4vr0ugg5nd0ob8uvd6gojd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mycompany.marburgflutterflowtest",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "975088002770-i56n9s84r0hghfa6rgmhk9jrkkv9bchq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFgtTYCAqyhXLL51DdfTL4aNFJrC4dU9Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975088002770-i56n9s84r0hghfa6rgmhk9jrkkv9bchq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "975088002770-30srgjmoc2h3qg5bovhtjksqt51uen2f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.test"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975088002770:android:f24c695463ddedf1d46f0b",
+        "android_client_info": {
+          "package_name": "com.mycompany.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975088002770-i56n9s84r0hghfa6rgmhk9jrkkv9bchq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDFgtTYCAqyhXLL51DdfTL4aNFJrC4dU9Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "975088002770-i56n9s84r0hghfa6rgmhk9jrkkv9bchq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "975088002770-30srgjmoc2h3qg5bovhtjksqt51uen2f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.test"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
