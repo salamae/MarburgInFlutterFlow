@@ -71,6 +71,14 @@
     <key>NSUserNotificationUsageDescription</key>
     <string>Wir senden dir Event-Benachrichtigungen</string>
     <!-- End of NSUserNotificationUsageDescription -->
+    <!-- Start of NSLocationAlwaysAndWhenInUseUsage -->
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Wir benötigen deinen Standort, um Events in deiner Nähe anzuzeigen.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Wir benötigen deinen Standort, um Events in deiner Nähe anzuzeigen.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Wir benötigen deinen Standort im Hintergrund für Event-Benachrichtigungen.</string>
+    <!-- End of NSLocationAlwaysAndWhenInUseUsage -->
     <key>UILaunchStoryboardName</key>
     <string>LaunchScreen</string>
     <key>UIMainStoryboardFile</key>

@@ -74,8 +74,6 @@ class _EventDetailsStoebernWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => EventDetailsStoebernModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -116,7 +114,7 @@ class _EventDetailsStoebernWidgetState
                     'Event Details',
                     textAlign: TextAlign.start,
                     style: FlutterFlowTheme.of(context).headlineSmall.override(
-                          font: GoogleFonts.interTight(
+                          font: GoogleFonts.inter(
                             fontWeight: FontWeight.w600,
                             fontStyle: FlutterFlowTheme.of(context)
                                 .headlineSmall
@@ -278,7 +276,7 @@ class _EventDetailsStoebernWidgetState
                     Text(
                       widget.name!,
                       style: FlutterFlowTheme.of(context).titleLarge.override(
-                            font: GoogleFonts.interTight(
+                            font: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                               fontStyle: FlutterFlowTheme.of(context)
                                   .titleLarge
@@ -308,7 +306,7 @@ class _EventDetailsStoebernWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FontWeight.bold,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .headlineLarge
@@ -335,7 +333,7 @@ class _EventDetailsStoebernWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .labelLarge
                                   .override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.bold,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .labelLarge
@@ -371,7 +369,7 @@ class _EventDetailsStoebernWidgetState
                               style: FlutterFlowTheme.of(context)
                                   .headlineLarge
                                   .override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .headlineLarge
                                           .fontWeight,
@@ -409,7 +407,7 @@ class _EventDetailsStoebernWidgetState
                             style: FlutterFlowTheme.of(context)
                                 .labelLarge
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .labelLarge
                                         .fontWeight,
@@ -481,7 +479,7 @@ class _EventDetailsStoebernWidgetState
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .fontWeight,
@@ -511,7 +509,7 @@ class _EventDetailsStoebernWidgetState
                       child: Text(
                         widget.shortDescription,
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .fontWeight,
@@ -537,7 +535,7 @@ class _EventDetailsStoebernWidgetState
                       child: Text(
                         widget.longDescription,
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .fontWeight,
@@ -584,7 +582,7 @@ class _EventDetailsStoebernWidgetState
                                 style: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
-                                      font: GoogleFonts.interTight(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FontWeight.bold,
                                         fontStyle: FlutterFlowTheme.of(context)
                                             .headlineSmall
@@ -788,8 +786,9 @@ class _EventDetailsStoebernWidgetState
                                                                     context)
                                                                 .headlineLarge
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .interTight(
+                                                                  font:
+                                                                      GoogleFonts
+                                                                          .inter(
                                                                     fontWeight: FlutterFlowTheme.of(
                                                                             context)
                                                                         .headlineLarge
@@ -832,8 +831,9 @@ class _EventDetailsStoebernWidgetState
                                                                   context)
                                                               .bodySmall
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .interTight(
+                                                                font:
+                                                                    GoogleFonts
+                                                                        .inter(
                                                                   fontWeight: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodySmall
@@ -877,8 +877,9 @@ class _EventDetailsStoebernWidgetState
                                                                   context)
                                                               .bodySmall
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .interTight(
+                                                                font:
+                                                                    GoogleFonts
+                                                                        .inter(
                                                                   fontWeight: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodySmall

@@ -27,8 +27,6 @@ class _LoginViewWidgetState extends State<LoginViewWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => LoginViewModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -79,7 +77,7 @@ class _LoginViewWidgetState extends State<LoginViewWidget> {
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .fontWeight,
@@ -151,7 +149,7 @@ class _LoginViewWidgetState extends State<LoginViewWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .headlineLarge
                                     .override(
-                                      font: GoogleFonts.interTight(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .headlineLarge
                                             .fontWeight,
@@ -194,7 +192,7 @@ class _LoginViewWidgetState extends State<LoginViewWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .headlineLarge
                                     .override(
-                                      font: GoogleFonts.interTight(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .headlineLarge
                                             .fontWeight,
@@ -237,7 +235,7 @@ class _LoginViewWidgetState extends State<LoginViewWidget> {
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      font: GoogleFonts.interTight(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .fontWeight,
@@ -283,7 +281,7 @@ class _LoginViewWidgetState extends State<LoginViewWidget> {
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleLarge
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight: FontWeight.w500,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)

@@ -99,8 +99,6 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
       length: 3,
       initialIndex: 0,
     )..addListener(() => safeSetState(() {}));
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -190,7 +188,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                           FlutterFlowTheme.of(context).secondaryText,
                       labelStyle:
                           FlutterFlowTheme.of(context).titleMedium.override(
-                                font: GoogleFonts.interTight(
+                                font: GoogleFonts.inter(
                                   fontWeight: FlutterFlowTheme.of(context)
                                       .titleMedium
                                       .fontWeight,
@@ -266,7 +264,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight: FontWeight.bold,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
@@ -293,7 +291,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
@@ -347,7 +345,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight: FontWeight.bold,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
@@ -373,7 +371,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
@@ -460,8 +458,8 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
+                                                          font:
+                                                              GoogleFonts.inter(
                                                             fontWeight:
                                                                 FontWeight.w600,
                                                             fontStyle:
@@ -611,8 +609,8 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
+                                                          font:
+                                                              GoogleFonts.inter(
                                                             fontWeight:
                                                                 FontWeight.w600,
                                                             fontStyle:
@@ -762,8 +760,8 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
+                                                          font:
+                                                              GoogleFonts.inter(
                                                             fontWeight:
                                                                 FontWeight.w600,
                                                             fontStyle:
@@ -909,8 +907,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        font: GoogleFonts
-                                                            .interTight(
+                                                        font: GoogleFonts.inter(
                                                           fontWeight:
                                                               FontWeight.w600,
                                                           fontStyle:
@@ -1038,7 +1035,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight: FontWeight.bold,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
@@ -1064,7 +1061,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
@@ -1182,7 +1179,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                           .bodyMedium
                                                           .override(
                                                             font: GoogleFonts
-                                                                .interTight(
+                                                                .inter(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -1352,7 +1349,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                           .bodyMedium
                                                           .override(
                                                             font: GoogleFonts
-                                                                .interTight(
+                                                                .inter(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -1522,7 +1519,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                           .bodyMedium
                                                           .override(
                                                             font: GoogleFonts
-                                                                .interTight(
+                                                                .inter(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -1692,7 +1689,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                           .bodyMedium
                                                           .override(
                                                             font: GoogleFonts
-                                                                .interTight(
+                                                                .inter(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -1862,7 +1859,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                           .bodyMedium
                                                           .override(
                                                             font: GoogleFonts
-                                                                .interTight(
+                                                                .inter(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -2031,7 +2028,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                           .bodyMedium
                                                           .override(
                                                             font: GoogleFonts
-                                                                .interTight(
+                                                                .inter(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -2200,7 +2197,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                           .bodyMedium
                                                           .override(
                                                             font: GoogleFonts
-                                                                .interTight(
+                                                                .inter(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -2370,7 +2367,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                           .bodyMedium
                                                           .override(
                                                             font: GoogleFonts
-                                                                .interTight(
+                                                                .inter(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -2539,7 +2536,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                           .bodyMedium
                                                           .override(
                                                             font: GoogleFonts
-                                                                .interTight(
+                                                                .inter(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -2708,7 +2705,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                           .bodyMedium
                                                           .override(
                                                             font: GoogleFonts
-                                                                .interTight(
+                                                                .inter(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -2878,7 +2875,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                           .bodyMedium
                                                           .override(
                                                             font: GoogleFonts
-                                                                .interTight(
+                                                                .inter(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -3049,7 +3046,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                           .bodyMedium
                                                           .override(
                                                             font: GoogleFonts
-                                                                .interTight(
+                                                                .inter(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -3219,7 +3216,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                           .bodyMedium
                                                           .override(
                                                             font: GoogleFonts
-                                                                .interTight(
+                                                                .inter(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -3389,7 +3386,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                                                           .bodyMedium
                                                           .override(
                                                             font: GoogleFonts
-                                                                .interTight(
+                                                                .inter(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -3536,7 +3533,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .fontWeight,
@@ -3626,7 +3623,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                           color: Color(0xFFE9453A),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.w500,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
@@ -3677,7 +3674,7 @@ class _OnBoardWidgetState extends State<OnBoardWidget>
                           color: Color(0xFFE9453A),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.w500,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .titleSmall

@@ -50,8 +50,6 @@ class _EventslListWidgetState extends State<EventslListWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => EventslListModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -189,7 +187,7 @@ class _EventslListWidgetState extends State<EventslListWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .headlineLarge
                                   .override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.bold,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .headlineLarge
@@ -317,7 +315,7 @@ class _EventslListWidgetState extends State<EventslListWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .fontWeight,
@@ -367,7 +365,7 @@ class _EventslListWidgetState extends State<EventslListWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .bodySmall
@@ -399,7 +397,7 @@ class _EventslListWidgetState extends State<EventslListWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium

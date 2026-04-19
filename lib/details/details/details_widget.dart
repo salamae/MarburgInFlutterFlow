@@ -70,8 +70,6 @@ class _DetailsWidgetState extends State<DetailsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DetailsModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -161,7 +159,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.w600,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .headlineSmall
@@ -505,7 +503,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                       Text(
                         widget.name!,
                         style: FlutterFlowTheme.of(context).titleLarge.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FontWeight.bold,
                                 fontStyle: FlutterFlowTheme.of(context)
                                     .titleLarge
@@ -544,7 +542,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.interTight(
+                                          font: GoogleFonts.inter(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
@@ -578,7 +576,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                           widget.longDes!,
                           style:
                               FlutterFlowTheme.of(context).bodyLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .fontWeight,
@@ -644,7 +642,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      font: GoogleFonts.interTight(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FontWeight.w600,
                                         fontStyle: FlutterFlowTheme.of(context)
                                             .titleMedium
@@ -698,7 +696,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.interTight(
+                                              font: GoogleFonts.inter(
                                                 fontWeight: FontWeight.w500,
                                                 fontStyle:
                                                     FlutterFlowTheme.of(context)
@@ -732,7 +730,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.interTight(
+                                            font: GoogleFonts.inter(
                                               fontWeight: FontWeight.w600,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
@@ -763,7 +761,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.interTight(
+                                            font: GoogleFonts.inter(
                                               fontWeight: FontWeight.w600,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
@@ -794,7 +792,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.interTight(
+                                            font: GoogleFonts.inter(
                                               fontWeight: FontWeight.w600,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
@@ -825,7 +823,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.interTight(
+                                            font: GoogleFonts.inter(
                                               fontWeight: FontWeight.w600,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
@@ -856,7 +854,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.interTight(
+                                            font: GoogleFonts.inter(
                                               fontWeight: FontWeight.w600,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
@@ -887,7 +885,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.interTight(
+                                            font: GoogleFonts.inter(
                                               fontWeight: FontWeight.w600,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
@@ -940,7 +938,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      font: GoogleFonts.interTight(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FontWeight.w500,
                                         fontStyle: FlutterFlowTheme.of(context)
                                             .titleMedium
@@ -979,7 +977,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .titleMedium
                                     .override(
-                                      font: GoogleFonts.interTight(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FontWeight.w500,
                                         fontStyle: FlutterFlowTheme.of(context)
                                             .titleMedium
@@ -1032,7 +1030,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight: FontWeight.w600,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
@@ -1059,7 +1057,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                             widget.longDes!,
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
-                                      font: GoogleFonts.interTight(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .fontWeight,
@@ -1101,7 +1099,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                               textStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .fontWeight,

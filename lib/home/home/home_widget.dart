@@ -86,8 +86,6 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
           !anim.applyInitialState),
       this,
     );
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -255,7 +253,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -336,7 +334,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
@@ -417,7 +415,7 @@ class _HomeWidgetState extends State<HomeWidget> with TickerProviderStateMixin {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium

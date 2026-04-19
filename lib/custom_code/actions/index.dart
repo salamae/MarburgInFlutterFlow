@@ -9,3 +9,4 @@ export 'shuffle_event.dart' show shuffleEvent;
 export 'shuffle_freizeit.dart' show shuffleFreizeit;
 export 'schedule_event_notification.dart' show scheduleEventNotification;
 export 'start_location_tracking.dart' show startLocationTracking;
+export 'check_parking_notification.dart' show checkParkingNotification;

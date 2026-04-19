@@ -2,11 +2,12 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/compenents/apple_switch/apple_switch_widget.dart';
 import '/compenents/delete_account_anfrage/delete_account_anfrage_widget.dart';
-import '/compenents/einstellungen/einstellungen_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/login_page/login_for_guest/login_for_guest_widget.dart';
+import '/profile/einstellungen/einstellungen_widget.dart';
+import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -82,8 +83,6 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
     _model.zipTextController ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.zip, ''));
     _model.zipFocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -169,40 +168,53 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(
-                            valueOrDefault<double>(
-                              () {
-                                if (widget.pageTitle == 'Behörden') {
-                                  return 105.0;
-                                } else if (widget.pageTitle == 'Impressum') {
-                                  return 100.0;
-                                } else if (widget.pageTitle == 'Datenschutz') {
-                                  return 100.0;
-                                } else if (widget.pageTitle ==
-                                    'Mitteilungen') {
-                                  return 100.0;
-                                } else if (widget.pageTitle ==
-                                    'Kontoeinstellungen') {
-                                  return (loggedIn ? 15.0 : 80.0);
-                                } else if (widget.pageTitle == 'Parkplätze') {
-                                  return 105.0;
-                                } else {
-                                  return 0.0;
-                                }
-                              }(),
+                      if (widget.pageTitle != 'Mitteilungen')
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              valueOrDefault<double>(
+                                () {
+                                  if (widget.pageTitle == 'Behörden') {
+                                    return 105.0;
+                                  } else if (widget.pageTitle == 'Impressum') {
+                                    return 100.0;
+                                  } else if (widget.pageTitle ==
+                                      'Datenschutz') {
+                                    return 100.0;
+                                  } else if (widget.pageTitle ==
+                                      'Mitteilungen') {
+                                    return 100.0;
+                                  } else if (widget.pageTitle ==
+                                      'Kontoeinstellungen') {
+                                    return (loggedIn ? 15.0 : 80.0);
+                                  } else if (widget.pageTitle ==
+                                      'Parkplätze') {
+                                    return 105.0;
+                                  } else {
+                                    return 0.0;
+                                  }
+                                }(),
+                                0.0,
+                              ),
                               0.0,
-                            ),
-                            0.0,
-                            0.0,
-                            0.0),
-                        child: Text(
-                          widget.pageTitle!,
-                          textAlign: TextAlign.start,
-                          style: FlutterFlowTheme.of(context)
-                              .headlineMedium
-                              .override(
-                                font: GoogleFonts.interTight(
+                              0.0,
+                              0.0),
+                          child: Text(
+                            widget.pageTitle!,
+                            textAlign: TextAlign.start,
+                            style: FlutterFlowTheme.of(context)
+                                .headlineMedium
+                                .override(
+                                  font: GoogleFonts.inter(
+                                    fontWeight: FlutterFlowTheme.of(context)
+                                        .headlineMedium
+                                        .fontWeight,
+                                    fontStyle: FlutterFlowTheme.of(context)
+                                        .headlineMedium
+                                        .fontStyle,
+                                  ),
+                                  color: Colors.black,
+                                  fontSize: 17.0,
+                                  letterSpacing: 0.0,
                                   fontWeight: FlutterFlowTheme.of(context)
                                       .headlineMedium
                                       .fontWeight,
@@ -210,18 +222,8 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                       .headlineMedium
                                       .fontStyle,
                                 ),
-                                color: Colors.black,
-                                fontSize: 17.0,
-                                letterSpacing: 0.0,
-                                fontWeight: FlutterFlowTheme.of(context)
-                                    .headlineMedium
-                                    .fontWeight,
-                                fontStyle: FlutterFlowTheme.of(context)
-                                    .headlineMedium
-                                    .fontStyle,
-                              ),
+                          ),
                         ),
-                      ),
                       if (widget.pageTitle == 'Behörden')
                         Flexible(
                           child: Align(
@@ -328,7 +330,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyLarge
                                         .override(
-                                          font: GoogleFonts.interTight(
+                                          font: GoogleFonts.inter(
                                             fontWeight: FontWeight.w500,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
@@ -419,7 +421,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineSmall
                                         .override(
-                                          font: GoogleFonts.interTight(
+                                          font: GoogleFonts.inter(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .headlineSmall
@@ -447,7 +449,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .bodyMedium
@@ -479,7 +481,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.interTight(
+                                          font: GoogleFonts.inter(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
@@ -539,7 +541,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FontWeight.bold,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .headlineLarge
@@ -563,7 +565,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .headlineLarge
                                         .fontWeight,
@@ -591,7 +593,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontWeight,
@@ -693,7 +695,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontWeight,
@@ -721,7 +723,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .headlineLarge
                                         .fontWeight,
@@ -749,7 +751,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontWeight,
@@ -777,7 +779,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .headlineLarge
                                         .fontWeight,
@@ -805,7 +807,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontWeight,
@@ -858,7 +860,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontWeight,
@@ -886,7 +888,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .headlineLarge
                                         .fontWeight,
@@ -914,7 +916,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontWeight,
@@ -967,7 +969,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .headlineLarge
                                         .fontWeight,
@@ -995,7 +997,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontWeight,
@@ -1023,7 +1025,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .headlineLarge
                                         .fontWeight,
@@ -1051,7 +1053,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontWeight,
@@ -1133,7 +1135,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .headlineLarge
                                         .fontWeight,
@@ -1161,7 +1163,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontWeight,
@@ -1189,7 +1191,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .headlineLarge
                                         .fontWeight,
@@ -1217,7 +1219,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontWeight,
@@ -1289,7 +1291,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .headlineLarge
                                         .fontWeight,
@@ -1317,7 +1319,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontWeight,
@@ -1364,7 +1366,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FontWeight.bold,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .headlineLarge
@@ -1385,7 +1387,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .override(
-                                font: GoogleFonts.interTight(
+                                font: GoogleFonts.inter(
                                   fontWeight: FlutterFlowTheme.of(context)
                                       .headlineLarge
                                       .fontWeight,
@@ -1434,7 +1436,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .override(
-                                font: GoogleFonts.interTight(
+                                font: GoogleFonts.inter(
                                   fontWeight: FlutterFlowTheme.of(context)
                                       .headlineLarge
                                       .fontWeight,
@@ -1507,7 +1509,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .override(
-                                font: GoogleFonts.interTight(
+                                font: GoogleFonts.inter(
                                   fontWeight: FlutterFlowTheme.of(context)
                                       .headlineLarge
                                       .fontWeight,
@@ -1555,7 +1557,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .override(
-                                font: GoogleFonts.interTight(
+                                font: GoogleFonts.inter(
                                   fontWeight: FlutterFlowTheme.of(context)
                                       .headlineLarge
                                       .fontWeight,
@@ -1603,7 +1605,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .override(
-                                font: GoogleFonts.interTight(
+                                font: GoogleFonts.inter(
                                   fontWeight: FlutterFlowTheme.of(context)
                                       .headlineLarge
                                       .fontWeight,
@@ -1712,7 +1714,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .override(
-                                font: GoogleFonts.interTight(
+                                font: GoogleFonts.inter(
                                   fontWeight: FlutterFlowTheme.of(context)
                                       .headlineLarge
                                       .fontWeight,
@@ -1778,7 +1780,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .override(
-                                font: GoogleFonts.interTight(
+                                font: GoogleFonts.inter(
                                   fontWeight: FontWeight.bold,
                                   fontStyle: FlutterFlowTheme.of(context)
                                       .headlineLarge
@@ -1885,8 +1887,9 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                                                     context)
                                                                 .headlineSmall
                                                                 .override(
-                                                                  font: GoogleFonts
-                                                                      .interTight(
+                                                                  font:
+                                                                      GoogleFonts
+                                                                          .inter(
                                                                     fontWeight: FlutterFlowTheme.of(
                                                                             context)
                                                                         .headlineSmall
@@ -1922,8 +1925,9 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                                                   .of(context)
                                                               .labelMedium
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .interTight(
+                                                                font:
+                                                                    GoogleFonts
+                                                                        .inter(
                                                                   fontWeight: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium
@@ -1970,8 +1974,9 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                                                   context)
                                                               .titleLarge
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .interTight(
+                                                                font:
+                                                                    GoogleFonts
+                                                                        .inter(
                                                                   fontWeight: FlutterFlowTheme.of(
                                                                           context)
                                                                       .titleLarge
@@ -2068,6 +2073,23 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                                                     },
                                                                   ),
                                                                 });
+                                                                await actions
+                                                                    .checkParkingNotification(
+                                                                  listViewParkingRecord
+                                                                      .reference
+                                                                      .id,
+                                                                  listViewParkingRecord
+                                                                      .parkhaus,
+                                                                  listViewParkingRecord
+                                                                      .frei,
+                                                                  FFAppState()
+                                                                      .notificationSwitch4,
+                                                                  FFAppState()
+                                                                          .platz5
+                                                                      ? 5
+                                                                      : 10,
+                                                                  false,
+                                                                );
                                                               } else {
                                                                 await currentUserReference!
                                                                     .update({
@@ -2083,6 +2105,23 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                                                     },
                                                                   ),
                                                                 });
+                                                                await actions
+                                                                    .checkParkingNotification(
+                                                                  listViewParkingRecord
+                                                                      .reference
+                                                                      .id,
+                                                                  listViewParkingRecord
+                                                                      .parkhaus,
+                                                                  listViewParkingRecord
+                                                                      .frei,
+                                                                  FFAppState()
+                                                                      .notificationSwitch4,
+                                                                  FFAppState()
+                                                                          .platz5
+                                                                      ? 5
+                                                                      : 10,
+                                                                  true,
+                                                                );
                                                               }
 
                                                               FFAppState()
@@ -2197,6 +2236,23 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                                                     },
                                                                   ),
                                                                 });
+                                                                await actions
+                                                                    .checkParkingNotification(
+                                                                  listViewParkingRecord
+                                                                      .reference
+                                                                      .id,
+                                                                  listViewParkingRecord
+                                                                      .parkhaus,
+                                                                  listViewParkingRecord
+                                                                      .frei,
+                                                                  FFAppState()
+                                                                      .notificationSwitch4,
+                                                                  FFAppState()
+                                                                          .platz5
+                                                                      ? 5
+                                                                      : 10,
+                                                                  false,
+                                                                );
                                                               } else {
                                                                 await currentUserReference!
                                                                     .update({
@@ -2212,6 +2268,23 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                                                     },
                                                                   ),
                                                                 });
+                                                                await actions
+                                                                    .checkParkingNotification(
+                                                                  listViewParkingRecord
+                                                                      .reference
+                                                                      .id,
+                                                                  listViewParkingRecord
+                                                                      .parkhaus,
+                                                                  listViewParkingRecord
+                                                                      .frei,
+                                                                  FFAppState()
+                                                                      .notificationSwitch4,
+                                                                  FFAppState()
+                                                                          .platz5
+                                                                      ? 5
+                                                                      : 10,
+                                                                  true,
+                                                                );
                                                               }
 
                                                               FFAppState()
@@ -2300,7 +2373,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .headlineLarge
@@ -2345,7 +2418,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: GoogleFonts.interTight(
+                                              font: GoogleFonts.inter(
                                                 fontWeight:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
@@ -2405,7 +2478,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.interTight(
+                                            font: GoogleFonts.inter(
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -2457,7 +2530,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                         labelStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: GoogleFonts.interTight(
+                                              font: GoogleFonts.inter(
                                                 fontWeight:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
@@ -2481,7 +2554,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
-                                              font: GoogleFonts.interTight(
+                                              font: GoogleFonts.inter(
                                                 fontWeight:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
@@ -2541,7 +2614,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.interTight(
+                                            font: GoogleFonts.inter(
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -2582,7 +2655,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .headlineLarge
@@ -2769,32 +2842,30 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                               },
                                               child: Text(
                                                 'Berufstätig',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          color:
-                                                              Color(0xDD000000),
-                                                          fontSize: 13.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      color: Color(0xDD000000),
+                                                      fontSize: 13.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                               ),
                                             ),
                                             InkWell(
@@ -2809,32 +2880,30 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                               },
                                               child: Text(
                                                 'Schüler',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          color:
-                                                              Color(0xDD000000),
-                                                          fontSize: 13.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      color: Color(0xDD000000),
+                                                      fontSize: 13.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                               ),
                                             ),
                                             InkWell(
@@ -2849,32 +2918,30 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                               },
                                               child: Text(
                                                 'Student',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          color:
-                                                              Color(0xDD000000),
-                                                          fontSize: 13.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      color: Color(0xDD000000),
+                                                      fontSize: 13.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                               ),
                                             ),
                                             InkWell(
@@ -2889,32 +2956,30 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                               },
                                               child: Text(
                                                 'Rentner',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
-                                                            fontWeight:
-                                                                FontWeight.w600,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          color:
-                                                              Color(0xDD000000),
-                                                          fontSize: 13.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      color: Color(0xDD000000),
+                                                      fontSize: 13.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                    ),
                                               ),
                                             ),
                                           ],
@@ -2935,7 +3000,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .headlineLarge
@@ -3083,7 +3148,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineLarge
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .headlineLarge
@@ -3241,8 +3306,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                                       context)
                                                   .bodyMedium
                                                   .override(
-                                                    font:
-                                                        GoogleFonts.interTight(
+                                                    font: GoogleFonts.inter(
                                                       fontWeight:
                                                           FontWeight.w600,
                                                       fontStyle:
@@ -3278,8 +3342,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                                       context)
                                                   .bodyMedium
                                                   .override(
-                                                    font:
-                                                        GoogleFonts.interTight(
+                                                    font: GoogleFonts.inter(
                                                       fontWeight:
                                                           FontWeight.w600,
                                                       fontStyle:
@@ -3315,8 +3378,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                                       context)
                                                   .bodyMedium
                                                   .override(
-                                                    font:
-                                                        GoogleFonts.interTight(
+                                                    font: GoogleFonts.inter(
                                                       fontWeight:
                                                           FontWeight.w600,
                                                       fontStyle:
@@ -3366,7 +3428,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineLarge
                                         .override(
-                                          font: GoogleFonts.interTight(
+                                          font: GoogleFonts.inter(
                                             fontWeight: FontWeight.normal,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
@@ -3439,7 +3501,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .headlineLarge
                                           .override(
-                                            font: GoogleFonts.interTight(
+                                            font: GoogleFonts.inter(
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
                                                       .headlineLarge
@@ -3540,8 +3602,8 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .headlineSmall
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
+                                                          font:
+                                                              GoogleFonts.inter(
                                                             fontWeight:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -3574,39 +3636,37 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                               child: Text(
                                                 'Erstelle ein Konto und personalisiere \ndeine App mit deinen Interessen und\nEinstellungen',
                                                 textAlign: TextAlign.start,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          color:
-                                                              Color(0xFF57636C),
-                                                          fontSize: 14.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .bodyMedium
-                                                                  .fontStyle,
-                                                          lineHeight: 1.55,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .bodyMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      color: Color(0xFF57636C),
+                                                      fontSize: 14.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .bodyMedium
+                                                              .fontStyle,
+                                                      lineHeight: 1.55,
+                                                    ),
                                               ),
                                             ),
                                           ],
@@ -3661,7 +3721,7 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
-                                          font: GoogleFonts.interTight(
+                                          font: GoogleFonts.inter(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .titleSmall
@@ -3701,15 +3761,10 @@ class _ProflileComponentWidgetState extends State<ProflileComponentWidget> {
                 width: double.infinity,
                 height: double.infinity,
                 decoration: BoxDecoration(),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    wrapWithModel(
-                      model: _model.einstellungenModel,
-                      updateCallback: () => safeSetState(() {}),
-                      child: EinstellungenWidget(),
-                    ),
-                  ],
+                child: wrapWithModel(
+                  model: _model.einstellungenModel,
+                  updateCallback: () => safeSetState(() {}),
+                  child: EinstellungenWidget(),
                 ),
               ),
           ],

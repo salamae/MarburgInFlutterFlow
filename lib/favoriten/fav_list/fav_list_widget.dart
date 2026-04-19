@@ -55,8 +55,6 @@ class _FavListWidgetState extends State<FavListWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => FavListModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -348,7 +346,7 @@ class _FavListWidgetState extends State<FavListWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .headlineLarge
                                     .override(
-                                      font: GoogleFonts.interTight(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FontWeight.bold,
                                         fontStyle: FlutterFlowTheme.of(context)
                                             .headlineLarge
@@ -378,7 +376,7 @@ class _FavListWidgetState extends State<FavListWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .fontWeight,
@@ -409,7 +407,7 @@ class _FavListWidgetState extends State<FavListWidget> {
                           maxLines: 1,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .fontWeight,
@@ -455,7 +453,7 @@ class _FavListWidgetState extends State<FavListWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
-                                      font: GoogleFonts.interTight(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .fontWeight,
@@ -498,7 +496,7 @@ class _FavListWidgetState extends State<FavListWidget> {
                             maxLines: 1,
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      font: GoogleFonts.interTight(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FontWeight.w500,
                                         fontStyle: FlutterFlowTheme.of(context)
                                             .bodySmall

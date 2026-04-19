@@ -50,8 +50,6 @@ class _FuerDichContainerWidgetState extends State<FuerDichContainerWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => FuerDichContainerModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -230,7 +228,7 @@ class _FuerDichContainerWidgetState extends State<FuerDichContainerWidget> {
                             maxLines: 1,
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
-                                      font: GoogleFonts.interTight(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FontWeight.bold,
                                         fontStyle: FlutterFlowTheme.of(context)
                                             .bodyLarge
@@ -253,7 +251,7 @@ class _FuerDichContainerWidgetState extends State<FuerDichContainerWidget> {
                             ? functions.formatTimeFromString(widget.time!)!
                             : ' ',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FontWeight.w500,
                                 fontStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -276,7 +274,7 @@ class _FuerDichContainerWidgetState extends State<FuerDichContainerWidget> {
                         : ' ',
                     maxLines: 1,
                     style: FlutterFlowTheme.of(context).bodySmall.override(
-                          font: GoogleFonts.interTight(
+                          font: GoogleFonts.inter(
                             fontWeight: FlutterFlowTheme.of(context)
                                 .bodySmall
                                 .fontWeight,
@@ -314,7 +312,7 @@ class _FuerDichContainerWidgetState extends State<FuerDichContainerWidget> {
                             maxLines: 1,
                             style:
                                 FlutterFlowTheme.of(context).bodySmall.override(
-                                      font: GoogleFonts.interTight(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .fontWeight,

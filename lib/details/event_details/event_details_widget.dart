@@ -61,8 +61,6 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => EventDetailsModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -152,7 +150,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.w600,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .headlineSmall
@@ -358,7 +356,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                 Text(
                   widget.title!,
                   style: FlutterFlowTheme.of(context).titleLarge.override(
-                        font: GoogleFonts.interTight(
+                        font: GoogleFonts.inter(
                           fontWeight: FontWeight.bold,
                           fontStyle:
                               FlutterFlowTheme.of(context).titleLarge.fontStyle,
@@ -384,7 +382,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                         functions.formatDateDE(widget.date!)!,
                         style:
                             FlutterFlowTheme.of(context).headlineLarge.override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FontWeight.bold,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .headlineLarge
@@ -410,7 +408,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                           functions.formatTimeFromString(widget.time!)!,
                           style:
                               FlutterFlowTheme.of(context).labelLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.bold,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .labelLarge
@@ -446,7 +444,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .override(
-                                font: GoogleFonts.interTight(
+                                font: GoogleFonts.inter(
                                   fontWeight: FlutterFlowTheme.of(context)
                                       .headlineLarge
                                       .fontWeight,
@@ -482,7 +480,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                       Text(
                         widget.company!,
                         style: FlutterFlowTheme.of(context).labelLarge.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FlutterFlowTheme.of(context)
                                     .labelLarge
                                     .fontWeight,
@@ -558,7 +556,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                         color: Color(0xFFD12717),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .fontWeight,
@@ -587,7 +585,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                   child: Text(
                     widget.shortDes!,
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                          font: GoogleFonts.interTight(
+                          font: GoogleFonts.inter(
                             fontWeight: FlutterFlowTheme.of(context)
                                 .bodyLarge
                                 .fontWeight,
@@ -610,7 +608,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                   child: Text(
                     widget.longDes!,
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
-                          font: GoogleFonts.interTight(
+                          font: GoogleFonts.inter(
                             fontWeight: FlutterFlowTheme.of(context)
                                 .bodyLarge
                                 .fontWeight,
@@ -654,7 +652,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FontWeight.bold,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .headlineSmall
@@ -840,8 +838,8 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                                                             context)
                                                         .headlineLarge
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
+                                                          font:
+                                                              GoogleFonts.inter(
                                                             fontWeight:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -884,8 +882,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                                                           context)
                                                       .bodySmall
                                                       .override(
-                                                        font: GoogleFonts
-                                                            .interTight(
+                                                        font: GoogleFonts.inter(
                                                           fontWeight:
                                                               FlutterFlowTheme.of(
                                                                       context)
@@ -930,8 +927,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                                                           context)
                                                       .bodySmall
                                                       .override(
-                                                        font: GoogleFonts
-                                                            .interTight(
+                                                        font: GoogleFonts.inter(
                                                           fontWeight:
                                                               FlutterFlowTheme.of(
                                                                       context)

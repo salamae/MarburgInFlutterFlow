@@ -21,6 +21,7 @@ class FFIcons {
   static const String _locationFamily = 'Location';
   static const String _eventdatilsFamily = 'Eventdatils';
   static const String _personenFamily = 'Personen';
+  static const String _ringFamily = 'Ring';
 
   // home
   static const IconData kbildschirmfoto20260104Um134816 =
@@ -115,4 +116,6 @@ class FFIcons {
       IconData(0xe919, fontFamily: _personenFamily);
   static const IconData kpersonfill =
       IconData(0xe91c, fontFamily: _personenFamily);
+
+  // Ring
 }

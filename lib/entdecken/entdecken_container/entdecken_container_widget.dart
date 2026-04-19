@@ -68,8 +68,6 @@ class _EntdeckenContainerWidgetState extends State<EntdeckenContainerWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => EntdeckenContainerModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -698,7 +696,7 @@ class _EntdeckenContainerWidgetState extends State<EntdeckenContainerWidget> {
                           : ' ',
                       maxLines: widget.idBuchen != null ? 2 : 1,
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
-                            font: GoogleFonts.interTight(
+                            font: GoogleFonts.inter(
                               fontWeight: FontWeight.bold,
                               fontStyle: FlutterFlowTheme.of(context)
                                   .bodyLarge
@@ -722,7 +720,7 @@ class _EntdeckenContainerWidgetState extends State<EntdeckenContainerWidget> {
                           : ' ',
                       maxLines: widget.idBuchen != null ? 2 : 1,
                       style: FlutterFlowTheme.of(context).bodySmall.override(
-                            font: GoogleFonts.interTight(
+                            font: GoogleFonts.inter(
                               fontWeight: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .fontWeight,
@@ -761,7 +759,7 @@ class _EntdeckenContainerWidgetState extends State<EntdeckenContainerWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .fontWeight,
@@ -806,7 +804,7 @@ class _EntdeckenContainerWidgetState extends State<EntdeckenContainerWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.w500,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .bodySmall
@@ -829,7 +827,7 @@ class _EntdeckenContainerWidgetState extends State<EntdeckenContainerWidget> {
                         '${widget.preis != null && widget.preis != '' ? 'ab ' : ' '}${widget.preis != null && widget.preis != '' ? widget.preis : ' '}',
                         maxLines: 1,
                         style: FlutterFlowTheme.of(context).bodySmall.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FlutterFlowTheme.of(context)
                                     .bodySmall
@@ -865,7 +863,7 @@ class _EntdeckenContainerWidgetState extends State<EntdeckenContainerWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodySmall
                                   .override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .fontWeight,

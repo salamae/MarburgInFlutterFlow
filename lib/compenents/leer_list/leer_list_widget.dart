@@ -31,8 +31,6 @@ class _LeerListWidgetState extends State<LeerListWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => LeerListModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -54,7 +52,7 @@ class _LeerListWidgetState extends State<LeerListWidget> {
             'Für den Filter \"${widget.date}\" wurden keine Events gefunden.',
             textAlign: TextAlign.center,
             style: FlutterFlowTheme.of(context).bodyMedium.override(
-                  font: GoogleFonts.interTight(
+                  font: GoogleFonts.inter(
                     fontWeight:
                         FlutterFlowTheme.of(context).bodyMedium.fontWeight,
                     fontStyle:

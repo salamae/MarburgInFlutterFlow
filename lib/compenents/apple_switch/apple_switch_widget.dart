@@ -102,8 +102,6 @@ class _AppleSwitchWidgetState extends State<AppleSwitchWidget> {
       }();
       safeSetState(() {});
     });
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -129,7 +127,7 @@ class _AppleSwitchWidgetState extends State<AppleSwitchWidget> {
               Text(
                 widget.title!,
                 style: FlutterFlowTheme.of(context).bodyMedium.override(
-                      font: GoogleFonts.interTight(
+                      font: GoogleFonts.inter(
                         fontWeight: FontWeight.w500,
                         fontStyle:
                             FlutterFlowTheme.of(context).bodyMedium.fontStyle,

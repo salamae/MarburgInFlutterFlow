@@ -92,6 +92,20 @@ class FFAppState extends ChangeNotifier {
       _trackingEnabled =
           prefs.getBool('ff_trackingEnabled') ?? _trackingEnabled;
     });
+    _safeInit(() {
+      _notificationSwitch3 =
+          prefs.getBool('ff_notificationSwitch3') ?? _notificationSwitch3;
+    });
+    _safeInit(() {
+      _notificationSwitch4 =
+          prefs.getBool('ff_notificationSwitch4') ?? _notificationSwitch4;
+    });
+    _safeInit(() {
+      _platz10 = prefs.getBool('ff_platz10') ?? _platz10;
+    });
+    _safeInit(() {
+      _platz5 = prefs.getBool('ff_platz5') ?? _platz5;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -397,6 +411,34 @@ class FFAppState extends ChangeNotifier {
   set trackingEnabled(bool value) {
     _trackingEnabled = value;
     prefs.setBool('ff_trackingEnabled', value);
+  }
+
+  bool _notificationSwitch3 = false;
+  bool get notificationSwitch3 => _notificationSwitch3;
+  set notificationSwitch3(bool value) {
+    _notificationSwitch3 = value;
+    prefs.setBool('ff_notificationSwitch3', value);
+  }
+
+  bool _notificationSwitch4 = false;
+  bool get notificationSwitch4 => _notificationSwitch4;
+  set notificationSwitch4(bool value) {
+    _notificationSwitch4 = value;
+    prefs.setBool('ff_notificationSwitch4', value);
+  }
+
+  bool _platz10 = true;
+  bool get platz10 => _platz10;
+  set platz10(bool value) {
+    _platz10 = value;
+    prefs.setBool('ff_platz10', value);
+  }
+
+  bool _platz5 = false;
+  bool get platz5 => _platz5;
+  set platz5(bool value) {
+    _platz5 = value;
+    prefs.setBool('ff_platz5', value);
   }
 }
 

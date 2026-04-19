@@ -106,8 +106,6 @@ class _AllesSearchWidgetState extends State<AllesSearchWidget> {
 
     _model.freizeitSearchTextController ??= TextEditingController();
     _model.freizeitSearchFocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -204,7 +202,7 @@ class _AllesSearchWidgetState extends State<AllesSearchWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FontWeight.w600,
                                     fontStyle: FlutterFlowTheme.of(context)
                                         .headlineSmall
@@ -731,7 +729,7 @@ class _AllesSearchWidgetState extends State<AllesSearchWidget> {
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.interTight(
+                                          font: GoogleFonts.inter(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
@@ -789,7 +787,7 @@ class _AllesSearchWidgetState extends State<AllesSearchWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight: FontWeight.normal,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
@@ -873,7 +871,7 @@ class _AllesSearchWidgetState extends State<AllesSearchWidget> {
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.interTight(
+                                          font: GoogleFonts.inter(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
@@ -931,7 +929,7 @@ class _AllesSearchWidgetState extends State<AllesSearchWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight: FontWeight.normal,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
@@ -1014,7 +1012,7 @@ class _AllesSearchWidgetState extends State<AllesSearchWidget> {
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.interTight(
+                                          font: GoogleFonts.inter(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
@@ -1072,7 +1070,7 @@ class _AllesSearchWidgetState extends State<AllesSearchWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight: FontWeight.normal,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
@@ -1152,7 +1150,7 @@ class _AllesSearchWidgetState extends State<AllesSearchWidget> {
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.interTight(
+                                          font: GoogleFonts.inter(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
@@ -1210,7 +1208,7 @@ class _AllesSearchWidgetState extends State<AllesSearchWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight: FontWeight.normal,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
@@ -1291,7 +1289,7 @@ class _AllesSearchWidgetState extends State<AllesSearchWidget> {
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.interTight(
+                                          font: GoogleFonts.inter(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
@@ -1349,7 +1347,7 @@ class _AllesSearchWidgetState extends State<AllesSearchWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight: FontWeight.normal,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)

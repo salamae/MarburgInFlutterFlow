@@ -284,8 +284,6 @@ class _HomePageWidgetState extends State<HomePageWidget>
           !anim.applyInitialState),
       this,
     );
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -808,8 +806,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                   .of(context)
                                                               .bodyMedium
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .interTight(
+                                                                font:
+                                                                    GoogleFonts
+                                                                        .inter(
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .bold,
@@ -933,8 +932,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
+                                                          font:
+                                                              GoogleFonts.inter(
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                             fontStyle:
@@ -1048,7 +1047,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                           .bodyMedium
                                                           .override(
                                                             font: GoogleFonts
-                                                                .interTight(
+                                                                .inter(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .bold,
@@ -1161,8 +1160,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
+                                                          font:
+                                                              GoogleFonts.inter(
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                             fontStyle:

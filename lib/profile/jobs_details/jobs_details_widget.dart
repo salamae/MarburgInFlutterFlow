@@ -68,8 +68,6 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
       _model.allJobs = _model.all!.toList().cast<JobsRecord>();
       safeSetState(() {});
     });
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -156,7 +154,7 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
-                                font: GoogleFonts.interTight(
+                                font: GoogleFonts.inter(
                                   fontWeight: FlutterFlowTheme.of(context)
                                       .headlineMedium
                                       .fontWeight,
@@ -222,7 +220,7 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                           widget.name!,
                           style:
                               FlutterFlowTheme.of(context).titleLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.bold,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .titleLarge
@@ -241,7 +239,7 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .override(
-                                font: GoogleFonts.interTight(
+                                font: GoogleFonts.inter(
                                   fontWeight: FlutterFlowTheme.of(context)
                                       .headlineLarge
                                       .fontWeight,
@@ -264,7 +262,7 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                           widget.hauptberuf!,
                           style:
                               FlutterFlowTheme.of(context).labelMedium.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .fontWeight,
@@ -296,7 +294,7 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineLarge
                               .override(
-                                font: GoogleFonts.interTight(
+                                font: GoogleFonts.inter(
                                   fontWeight: FlutterFlowTheme.of(context)
                                       .headlineLarge
                                       .fontWeight,
@@ -323,7 +321,7 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                               : 1000,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.normal,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -366,7 +364,7 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.w500,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
@@ -399,7 +397,7 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineLarge
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight: FontWeight.w600,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
@@ -434,31 +432,30 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                                             child: Text(
                                               'Vollzeit',
                                               textAlign: TextAlign.start,
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleMedium
-                                                  .override(
-                                                    font:
-                                                        GoogleFonts.interTight(
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleMedium
-                                                              .fontStyle,
-                                                    ),
-                                                    color: Colors.white,
-                                                    fontSize: 15.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleMedium
-                                                            .fontStyle,
-                                                  ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .override(
+                                                        font: GoogleFonts.inter(
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color: Colors.white,
+                                                        fontSize: 15.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .fontStyle,
+                                                      ),
                                             ),
                                           ),
                                         ),
@@ -476,31 +473,30 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                                             child: Text(
                                               'Teilzeit \nVormittag',
                                               textAlign: TextAlign.start,
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleMedium
-                                                  .override(
-                                                    font:
-                                                        GoogleFonts.interTight(
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleMedium
-                                                              .fontStyle,
-                                                    ),
-                                                    color: Colors.black,
-                                                    fontSize: 15.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleMedium
-                                                            .fontStyle,
-                                                  ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .override(
+                                                        font: GoogleFonts.inter(
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color: Colors.black,
+                                                        fontSize: 15.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .fontStyle,
+                                                      ),
                                             ),
                                           ),
                                         ),
@@ -518,31 +514,30 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                                             child: Text(
                                               'Teilzeit \nNachmittag',
                                               textAlign: TextAlign.start,
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleMedium
-                                                  .override(
-                                                    font:
-                                                        GoogleFonts.interTight(
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                      fontStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleMedium
-                                                              .fontStyle,
-                                                    ),
-                                                    color: Colors.black,
-                                                    fontSize: 15.0,
-                                                    letterSpacing: 0.0,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleMedium
-                                                            .fontStyle,
-                                                  ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .titleMedium
+                                                      .override(
+                                                        font: GoogleFonts.inter(
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                          fontStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleMedium
+                                                                  .fontStyle,
+                                                        ),
+                                                        color: Colors.black,
+                                                        fontSize: 15.0,
+                                                        letterSpacing: 0.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .titleMedium
+                                                                .fontStyle,
+                                                      ),
                                             ),
                                           ),
                                         ),
@@ -554,7 +549,7 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight:
                                               FlutterFlowTheme.of(context)
                                                   .headlineSmall
@@ -581,7 +576,7 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight: FontWeight.normal,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
@@ -605,7 +600,7 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
                                         .override(
-                                          font: GoogleFonts.interTight(
+                                          font: GoogleFonts.inter(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .headlineMedium
@@ -635,7 +630,7 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight: FontWeight.normal,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
@@ -675,7 +670,7 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .headlineLarge
                                   .override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.w600,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .headlineLarge
@@ -795,8 +790,8 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .headlineLarge
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
+                                                          font:
+                                                              GoogleFonts.inter(
                                                             fontWeight:
                                                                 FontWeight.w600,
                                                             fontStyle:
@@ -824,8 +819,8 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
+                                                          font:
+                                                              GoogleFonts.inter(
                                                             fontWeight:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -853,38 +848,36 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                                               ),
                                               Text(
                                                 'Start ${dateTimeFormat("dd.MM.yyyy", functions.parseIsoDate(sameJobsItem.eintrittszeitraum.von))}',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .labelMedium
-                                                        .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
-                                                            fontWeight:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontWeight,
-                                                            fontStyle:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .fontStyle,
-                                                          ),
-                                                          color:
-                                                              Color(0xFFE9453A),
-                                                          fontSize: 12.0,
-                                                          letterSpacing: 0.0,
-                                                          fontWeight:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontWeight,
-                                                          fontStyle:
-                                                              FlutterFlowTheme.of(
-                                                                      context)
-                                                                  .labelMedium
-                                                                  .fontStyle,
-                                                        ),
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .labelMedium
+                                                    .override(
+                                                      font: GoogleFonts.inter(
+                                                        fontWeight:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontWeight,
+                                                        fontStyle:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .labelMedium
+                                                                .fontStyle,
+                                                      ),
+                                                      color: Color(0xFFE9453A),
+                                                      fontSize: 12.0,
+                                                      letterSpacing: 0.0,
+                                                      fontWeight:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontWeight,
+                                                      fontStyle:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .labelMedium
+                                                              .fontStyle,
+                                                    ),
                                               ),
                                             ].divide(SizedBox(height: 8.0)),
                                           ),
@@ -905,7 +898,7 @@ class _JobsDetailsWidgetState extends State<JobsDetailsWidget> {
                     child: Text(
                       'Die Jobs die hier angezeigt werden, beziehen wir von der Agentur für Arbeit. Bei Fragen zu den Inhalten wenden Sie sich bitte an die Bundesagentur für Arbeit.',
                       style: FlutterFlowTheme.of(context).labelMedium.override(
-                            font: GoogleFonts.interTight(
+                            font: GoogleFonts.inter(
                               fontWeight: FlutterFlowTheme.of(context)
                                   .labelMedium
                                   .fontWeight,
