@@ -133,29 +133,5 @@ service cloud.firestore {
       allow write: if true;
       allow delete: if true;
     }
-
-    match /users/{parent}/tokens/{document} {
-      allow create: if true;
-      allow read: if true;
-      allow write: if true;
-      allow delete: if true;
-    }
-
-    match /{path=**}/tokens/{document} {
-      allow read: if true;
-    }
-
-
-    match /blackboard_posts/{parent}/replies/{document} {
-      allow create: if true;
-      allow read: if true;
-      allow write: if true;
-      allow delete: if true;
-    }
-
-    match /{path=**}/replies/{document} {
-      allow read: if true;
-    }
-
   }
 }
