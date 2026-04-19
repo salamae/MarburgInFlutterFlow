@@ -24,8 +24,6 @@ import 'schema/reservations_record.dart';
 import 'schema/carpool_requests_record.dart';
 import 'schema/users_record.dart';
 import 'schema/authorities_record.dart';
-import 'schema/tokens_record.dart';
-import 'schema/replies_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart' hide Order;
@@ -53,8 +51,6 @@ export 'schema/reservations_record.dart';
 export 'schema/carpool_requests_record.dart';
 export 'schema/users_record.dart';
 export 'schema/authorities_record.dart';
-export 'schema/tokens_record.dart';
-export 'schema/replies_record.dart';
 
 /// Functions to query ActivitiesRecords (as a Stream and as a Future).
 Future<int> queryActivitiesRecordCount({
@@ -754,86 +750,6 @@ Future<List<AuthoritiesRecord>> queryAuthoritiesRecordOnce({
     queryCollectionOnce(
       AuthoritiesRecord.collection,
       AuthoritiesRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-/// Functions to query TokensRecords (as a Stream and as a Future).
-Future<int> queryTokensRecordCount({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      TokensRecord.collection(parent),
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<TokensRecord>> queryTokensRecord({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      TokensRecord.collection(parent),
-      TokensRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<TokensRecord>> queryTokensRecordOnce({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      TokensRecord.collection(parent),
-      TokensRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-/// Functions to query RepliesRecords (as a Stream and as a Future).
-Future<int> queryRepliesRecordCount({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-}) =>
-    queryCollectionCount(
-      RepliesRecord.collection(parent),
-      queryBuilder: queryBuilder,
-      limit: limit,
-    );
-
-Stream<List<RepliesRecord>> queryRepliesRecord({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollection(
-      RepliesRecord.collection(parent),
-      RepliesRecord.fromSnapshot,
-      queryBuilder: queryBuilder,
-      limit: limit,
-      singleRecord: singleRecord,
-    );
-
-Future<List<RepliesRecord>> queryRepliesRecordOnce({
-  DocumentReference? parent,
-  Query Function(Query)? queryBuilder,
-  int limit = -1,
-  bool singleRecord = false,
-}) =>
-    queryCollectionOnce(
-      RepliesRecord.collection(parent),
-      RepliesRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,
