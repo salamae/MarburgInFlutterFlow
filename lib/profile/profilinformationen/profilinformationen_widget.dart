@@ -49,8 +49,6 @@ class _ProfilinformationenWidgetState extends State<ProfilinformationenWidget> {
 
     _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -129,7 +127,7 @@ class _ProfilinformationenWidgetState extends State<ProfilinformationenWidget> {
                             'Schließen',
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
-                                      font: GoogleFonts.interTight(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .fontWeight,
@@ -160,7 +158,7 @@ class _ProfilinformationenWidgetState extends State<ProfilinformationenWidget> {
                     'Profilinformationen',
                     textAlign: TextAlign.start,
                     style: FlutterFlowTheme.of(context).titleLarge.override(
-                          font: GoogleFonts.interTight(
+                          font: GoogleFonts.inter(
                             fontWeight: FontWeight.w600,
                             fontStyle: FlutterFlowTheme.of(context)
                                 .titleLarge
@@ -905,7 +903,7 @@ class _ProfilinformationenWidgetState extends State<ProfilinformationenWidget> {
                       child: Text(
                         'Name',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FontWeight.normal,
                                 fontStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -935,7 +933,7 @@ class _ProfilinformationenWidgetState extends State<ProfilinformationenWidget> {
                           labelText: 'Name',
                           labelStyle:
                               FlutterFlowTheme.of(context).bodyLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .fontWeight,
@@ -956,7 +954,7 @@ class _ProfilinformationenWidgetState extends State<ProfilinformationenWidget> {
                           alignLabelWithHint: false,
                           errorStyle:
                               FlutterFlowTheme.of(context).bodyLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .fontWeight,
@@ -1008,7 +1006,7 @@ class _ProfilinformationenWidgetState extends State<ProfilinformationenWidget> {
                               15.0, 0.0, 0.0, 0.0),
                         ),
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .fontWeight,
@@ -1039,7 +1037,7 @@ class _ProfilinformationenWidgetState extends State<ProfilinformationenWidget> {
                       child: Text(
                         'E-Mail-Adresse',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FontWeight.normal,
                                 fontStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -1070,7 +1068,7 @@ class _ProfilinformationenWidgetState extends State<ProfilinformationenWidget> {
                           labelText: 'E-Mail',
                           labelStyle:
                               FlutterFlowTheme.of(context).bodyLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .fontWeight,
@@ -1091,7 +1089,7 @@ class _ProfilinformationenWidgetState extends State<ProfilinformationenWidget> {
                           alignLabelWithHint: false,
                           errorStyle:
                               FlutterFlowTheme.of(context).bodyLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .fontWeight,
@@ -1143,7 +1141,7 @@ class _ProfilinformationenWidgetState extends State<ProfilinformationenWidget> {
                               15.0, 0.0, 0.0, 0.0),
                         ),
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .fontWeight,
@@ -1227,7 +1225,7 @@ class _ProfilinformationenWidgetState extends State<ProfilinformationenWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .fontWeight,

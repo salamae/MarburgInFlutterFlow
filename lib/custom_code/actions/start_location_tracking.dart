@@ -58,6 +58,9 @@ Future startLocationTracking(
 
   LocationPermission permission = await Geolocator.requestPermission();
 
+  if (permission == LocationPermission.whileInUse) {
+    permission = await Geolocator.requestPermission();
+  }
   if (permission == LocationPermission.denied ||
       permission == LocationPermission.deniedForever) {
     print("❌ Keine Location Permission");
@@ -182,14 +185,10 @@ Future _showNotification(String title, String body) async {
 
   final tz.TZDateTime now = tz.TZDateTime.from(DateTime.now(), tz.local);
 
-  await flutterLocalNotificationsPlugin.zonedSchedule(
+  await flutterLocalNotificationsPlugin.show(
     DateTime.now().millisecondsSinceEpoch ~/ 1000,
     title,
     body,
-    now.add(Duration(seconds: 1)), // sofort
     notificationDetails,
-    androidAllowWhileIdle: true,
-    uiLocalNotificationDateInterpretation:
-        UILocalNotificationDateInterpretation.absoluteTime,
   );
 }

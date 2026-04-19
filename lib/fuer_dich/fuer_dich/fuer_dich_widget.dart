@@ -32,8 +32,6 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => FuerDichModel());
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -88,7 +86,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight: FontWeight.bold,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
@@ -298,7 +296,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
-                                        font: GoogleFonts.interTight(
+                                        font: GoogleFonts.inter(
                                           fontWeight: FontWeight.bold,
                                           fontStyle:
                                               FlutterFlowTheme.of(context)
@@ -729,7 +727,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.interTight(
+                                          font: GoogleFonts.inter(
                                             fontWeight: FontWeight.bold,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
@@ -755,7 +753,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.interTight(
+                                          font: GoogleFonts.inter(
                                             fontWeight:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
@@ -811,7 +809,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.interTight(
+                                            font: GoogleFonts.inter(
                                               fontWeight: FontWeight.bold,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
@@ -837,7 +835,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.interTight(
+                                            font: GoogleFonts.inter(
                                               fontWeight:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -894,7 +892,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
-                                            font: GoogleFonts.interTight(
+                                            font: GoogleFonts.inter(
                                               fontWeight: FontWeight.bold,
                                               fontStyle:
                                                   FlutterFlowTheme.of(context)
@@ -988,7 +986,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                                                           .bodyMedium
                                                           .override(
                                                             font: GoogleFonts
-                                                                .interTight(
+                                                                .inter(
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -1027,8 +1025,9 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                                                                   .of(context)
                                                               .titleSmall
                                                               .override(
-                                                                font: GoogleFonts
-                                                                    .interTight(
+                                                                font:
+                                                                    GoogleFonts
+                                                                        .inter(
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .bold,
@@ -1128,8 +1127,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                                                           context)
                                                       .bodyMedium
                                                       .override(
-                                                        font: GoogleFonts
-                                                            .interTight(
+                                                        font: GoogleFonts.inter(
                                                           fontWeight:
                                                               FontWeight.w500,
                                                           fontStyle:
@@ -1184,7 +1182,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyMedium
                                         .override(
-                                          font: GoogleFonts.interTight(
+                                          font: GoogleFonts.inter(
                                             fontWeight: FontWeight.bold,
                                             fontStyle:
                                                 FlutterFlowTheme.of(context)
@@ -1271,8 +1269,8 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                                                             context)
                                                         .bodyMedium
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
+                                                          font:
+                                                              GoogleFonts.inter(
                                                             fontWeight:
                                                                 FontWeight.w500,
                                                             fontStyle:
@@ -1311,7 +1309,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                                                             .titleSmall
                                                             .override(
                                                               font: GoogleFonts
-                                                                  .interTight(
+                                                                  .inter(
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .bold,
@@ -1412,8 +1410,8 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
                                                         .override(
-                                                          font: GoogleFonts
-                                                              .interTight(
+                                                          font:
+                                                              GoogleFonts.inter(
                                                             fontWeight:
                                                                 FontWeight.w500,
                                                             fontStyle:
@@ -1478,7 +1476,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                           'Aktivitäten',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.w600,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -1501,7 +1499,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .fontWeight,
@@ -1555,7 +1553,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                           'Reise Planen',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.w600,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -1578,7 +1576,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .fontWeight,
@@ -1632,7 +1630,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                           'Kleinanzeigen',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.w600,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -1655,7 +1653,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .fontWeight,
@@ -1709,7 +1707,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                           'Verwalte dein Geschäft',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.w600,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -1732,7 +1730,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                           textAlign: TextAlign.center,
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .fontWeight,

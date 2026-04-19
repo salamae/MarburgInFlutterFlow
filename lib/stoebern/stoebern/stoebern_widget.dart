@@ -54,8 +54,6 @@ class _StoebernWidgetState extends State<StoebernWidget> {
           _model.schufledEvents!.toList().cast<EventsRecord>();
       safeSetState(() {});
     });
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -445,7 +443,7 @@ class _StoebernWidgetState extends State<StoebernWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium
                                             .override(
-                                              font: GoogleFonts.interTight(
+                                              font: GoogleFonts.inter(
                                                 fontWeight:
                                                     FlutterFlowTheme.of(context)
                                                         .titleMedium
@@ -480,7 +478,7 @@ class _StoebernWidgetState extends State<StoebernWidget> {
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
                                               .override(
-                                                font: GoogleFonts.interTight(
+                                                font: GoogleFonts.inter(
                                                   fontWeight: FontWeight.bold,
                                                   fontStyle:
                                                       FlutterFlowTheme.of(
@@ -509,7 +507,7 @@ class _StoebernWidgetState extends State<StoebernWidget> {
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
-                                              font: GoogleFonts.interTight(
+                                              font: GoogleFonts.inter(
                                                 fontWeight:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -557,8 +555,7 @@ class _StoebernWidgetState extends State<StoebernWidget> {
                                                       context)
                                                   .bodyMedium
                                                   .override(
-                                                    font:
-                                                        GoogleFonts.interTight(
+                                                    font: GoogleFonts.inter(
                                                       fontWeight:
                                                           FontWeight.w500,
                                                       fontStyle:
@@ -596,8 +593,7 @@ class _StoebernWidgetState extends State<StoebernWidget> {
                                                       context)
                                                   .bodyMedium
                                                   .override(
-                                                    font:
-                                                        GoogleFonts.interTight(
+                                                    font: GoogleFonts.inter(
                                                       fontWeight:
                                                           FontWeight.w500,
                                                       fontStyle:

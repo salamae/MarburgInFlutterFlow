@@ -1,6 +1,6 @@
 import '/compenents/apple_switch/apple_switch_widget.dart';
-import '/compenents/einstellungen/einstellungen_widget.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/profile/einstellungen/einstellungen_widget.dart';
 import 'proflile_component_widget.dart' show ProflileComponentWidget;
 import 'package:flutter/material.dart';
 

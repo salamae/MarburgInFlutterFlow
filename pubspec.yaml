@@ -49,6 +49,7 @@ dependencies:
   firebase_performance_platform_interface: 0.1.5+7
   firebase_performance_web: 0.1.7+13
   flutter_animate: 4.5.0
+  flutter_app_badger: ^1.5.0
   flutter_cache_manager: 3.4.1
   flutter_keyboard_visibility: 
     git:
@@ -126,10 +127,22 @@ dependency_overrides:
   uuid: ^4.0.0
 
 dev_dependencies:
+  flutter_launcher_icons: 0.13.1
   flutter_lints: 4.0.0
+  image: 4.2.0
   lints: 4.0.0
   flutter_test:
     sdk: flutter
+
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  web:
+    generate: true
+  image_path: 'assets/images/app_launcher_icon.jpg'
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -207,6 +220,9 @@ flutter:
     - family: Personen
       fonts:
         - asset: assets/fonts/Personen.ttf
+    - family: Ring
+      fonts:
+        - asset: assets/fonts/Ring.ttf
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

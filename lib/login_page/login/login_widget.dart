@@ -58,8 +58,6 @@ class _LoginWidgetState extends State<LoginWidget> {
 
     _model.regPassword2TextController ??= TextEditingController();
     _model.regPassword2FocusNode ??= FocusNode();
-
-    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -142,7 +140,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           'Abbrechen',
                           style:
                               FlutterFlowTheme.of(context).bodyLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .fontWeight,
@@ -187,7 +185,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           textAlign: TextAlign.start,
                           style:
                               FlutterFlowTheme.of(context).titleLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.bold,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .titleLarge
@@ -215,7 +213,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
-                                font: GoogleFonts.interTight(
+                                font: GoogleFonts.inter(
                                   fontWeight: FontWeight.w500,
                                   fontStyle: FlutterFlowTheme.of(context)
                                       .headlineMedium
@@ -238,7 +236,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                       child: Text(
                         'E-Mail',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -268,7 +266,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           labelText: 'Ihre E-Mail-Adresse',
                           labelStyle:
                               FlutterFlowTheme.of(context).bodyLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .fontWeight,
@@ -289,7 +287,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           alignLabelWithHint: false,
                           errorStyle:
                               FlutterFlowTheme.of(context).bodyLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .fontWeight,
@@ -339,7 +337,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               15.0, 0.0, 0.0, 0.0),
                         ),
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .fontWeight,
@@ -370,7 +368,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                       child: Text(
                         'Passwort',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -401,7 +399,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           labelText: 'Ihr Passwort',
                           labelStyle:
                               FlutterFlowTheme.of(context).bodyLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .fontWeight,
@@ -465,7 +463,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .fontWeight,
@@ -559,7 +557,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .fontWeight,
@@ -605,7 +603,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
-                                font: GoogleFonts.interTight(
+                                font: GoogleFonts.inter(
                                   fontWeight: FontWeight.w500,
                                   fontStyle: FlutterFlowTheme.of(context)
                                       .headlineMedium
@@ -645,7 +643,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           textAlign: TextAlign.start,
                           style:
                               FlutterFlowTheme.of(context).titleLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.bold,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .titleLarge
@@ -673,7 +671,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
-                                font: GoogleFonts.interTight(
+                                font: GoogleFonts.inter(
                                   fontWeight: FontWeight.w500,
                                   fontStyle: FlutterFlowTheme.of(context)
                                       .headlineMedium
@@ -696,7 +694,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                       child: Text(
                         'E-Mail',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -726,7 +724,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           labelText: 'Ihre E-Mail-Adresse',
                           labelStyle:
                               FlutterFlowTheme.of(context).bodyLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .fontWeight,
@@ -747,7 +745,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           alignLabelWithHint: false,
                           errorStyle:
                               FlutterFlowTheme.of(context).bodyLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .fontWeight,
@@ -797,7 +795,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               15.0, 0.0, 0.0, 0.0),
                         ),
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .fontWeight,
@@ -828,7 +826,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                       child: Text(
                         'Passwort',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FontWeight.w600,
                                 fontStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -859,7 +857,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           labelText: 'Ihr Passwort',
                           labelStyle:
                               FlutterFlowTheme.of(context).bodyLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .fontWeight,
@@ -923,7 +921,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              font: GoogleFonts.interTight(
+                              font: GoogleFonts.inter(
                                 fontWeight: FlutterFlowTheme.of(context)
                                     .bodyLarge
                                     .fontWeight,
@@ -966,7 +964,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           'Passwort wiederholen',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FontWeight.w600,
                                       fontStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -998,7 +996,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             labelText: 'Passwort bestätigen',
                             labelStyle:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
-                                      font: GoogleFonts.interTight(
+                                      font: GoogleFonts.inter(
                                         fontWeight: FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .fontWeight,
@@ -1064,7 +1062,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyLarge.override(
-                                    font: GoogleFonts.interTight(
+                                    font: GoogleFonts.inter(
                                       fontWeight: FlutterFlowTheme.of(context)
                                           .bodyLarge
                                           .fontWeight,
@@ -1156,7 +1154,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                             textStyle: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(
-                                  font: GoogleFonts.interTight(
+                                  font: GoogleFonts.inter(
                                     fontWeight: FlutterFlowTheme.of(context)
                                         .titleMedium
                                         .fontWeight,
@@ -1202,7 +1200,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           style: FlutterFlowTheme.of(context)
                               .headlineMedium
                               .override(
-                                font: GoogleFonts.interTight(
+                                font: GoogleFonts.inter(
                                   fontWeight: FontWeight.w500,
                                   fontStyle: FlutterFlowTheme.of(context)
                                       .headlineMedium
