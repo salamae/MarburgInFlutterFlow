@@ -105,7 +105,7 @@ class _StoebernWidgetState extends State<StoebernWidget> {
                               timeStr: stoebernEventsItem.time,
                               address1: stoebernEventsItem.address1,
                               zipCode: stoebernEventsItem.zipCode,
-                              city: stoebernEventsItem.city,
+                              city: stoebernEventsItem.town,
                               country: stoebernEventsItem.country,
                               image: stoebernEventsItem.imageUrl,
                               comany: stoebernEventsItem.company,
@@ -116,7 +116,7 @@ class _StoebernWidgetState extends State<StoebernWidget> {
                               name: stoebernEventsItem.name,
                               event: stoebernEventsItem,
                               adresse:
-                                  '${stoebernEventsItem.address1 != '' ? '${stoebernEventsItem.address1}, ' : ' '}${stoebernEventsItem.address1 != '' ? '${stoebernEventsItem.zipCode}, ' : ' '}${stoebernEventsItem.address1 != '' ? '${stoebernEventsItem.city}, ' : ' '}${stoebernEventsItem.address1 != '' ? '${stoebernEventsItem.country}' : ' '}',
+                                  '${stoebernEventsItem.address1 != '' ? '${stoebernEventsItem.address1}, ' : ' '}${stoebernEventsItem.address1 != '' ? '${stoebernEventsItem.zipCode}, ' : ' '}${stoebernEventsItem.address1 != '' ? '${stoebernEventsItem.town}, ' : ' '}${stoebernEventsItem.address1 != '' ? '${stoebernEventsItem.country}' : ' '}',
                               reHeart: Icon(
                                 FFIcons.kheartfill,
                                 color: Color(0xFFD12717),

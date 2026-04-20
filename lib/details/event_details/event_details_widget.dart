@@ -760,7 +760,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                                                 ParamType.Document,
                                               ),
                                               'adresse': serializeParam(
-                                                '${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.address1}, ' : ' '}${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.zipCode}, ' : ' '}${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.city}, ' : ' '}${widget.adresse1 != null && widget.adresse1 != '' ? '${listViewEventsRecord.country}' : ' '}',
+                                                '${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.address1}, ' : ' '}${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.zipCode}, ' : ' '}${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.town}, ' : ' '}${widget.adresse1 != null && widget.adresse1 != '' ? '${listViewEventsRecord.country}' : ' '}',
                                                 ParamType.String,
                                               ),
                                               'adresse1': serializeParam(
@@ -768,7 +768,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                                                 ParamType.String,
                                               ),
                                               'city': serializeParam(
-                                                listViewEventsRecord.city,
+                                                listViewEventsRecord.town,
                                                 ParamType.String,
                                               ),
                                               'country': serializeParam(
