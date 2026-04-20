@@ -70,11 +70,6 @@ class EventsRecord extends FirestoreRecord {
   String get country => _country ?? '';
   bool hasCountry() => _country != null;
 
-  // "City" field.
-  String? _city;
-  String get city => _city ?? '';
-  bool hasCity() => _city != null;
-
   // "_id" field.
   String? _id;
   String get id => _id ?? '';
@@ -165,6 +160,11 @@ class EventsRecord extends FirestoreRecord {
   String get kategorien => _kategorien ?? '';
   bool hasKategorien() => _kategorien != null;
 
+  // "City" field.
+  String? _city;
+  String get city => _city ?? '';
+  bool hasCity() => _city != null;
+
   void _initializeFields() {
     _name = snapshotData['name'] as String?;
     _date = snapshotData['date'] as String?;
@@ -178,7 +178,6 @@ class EventsRecord extends FirestoreRecord {
     _treffpunkt = snapshotData['Treffpunkt'] as String?;
     _websiteUrl = snapshotData['WebsiteUrl'] as String?;
     _country = snapshotData['country'] as String?;
-    _city = snapshotData['City'] as String?;
     _id = snapshotData['_id'] as String?;
     _fax = snapshotData['Fax'] as String?;
     _shortDescription = snapshotData['ShortDescription'] as String?;
@@ -197,6 +196,7 @@ class EventsRecord extends FirestoreRecord {
     _description = snapshotData['description'] as String?;
     _imageUrl = snapshotData['imageUrl'] as String?;
     _kategorien = snapshotData['Kategorien'] as String?;
+    _city = snapshotData['City'] as String?;
   }
 
   static CollectionReference get collection =>
@@ -244,7 +244,6 @@ Map<String, dynamic> createEventsRecordData({
   String? treffpunkt,
   String? websiteUrl,
   String? country,
-  String? city,
   String? id,
   String? fax,
   String? shortDescription,
@@ -263,6 +262,7 @@ Map<String, dynamic> createEventsRecordData({
   String? description,
   String? imageUrl,
   String? kategorien,
+  String? city,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -277,7 +277,6 @@ Map<String, dynamic> createEventsRecordData({
       'Treffpunkt': treffpunkt,
       'WebsiteUrl': websiteUrl,
       'country': country,
-      'City': city,
       '_id': id,
       'Fax': fax,
       'ShortDescription': shortDescription,
@@ -296,6 +295,7 @@ Map<String, dynamic> createEventsRecordData({
       'description': description,
       'imageUrl': imageUrl,
       'Kategorien': kategorien,
+      'City': city,
     }.withoutNulls,
   );
 
@@ -318,7 +318,6 @@ class EventsRecordDocumentEquality implements Equality<EventsRecord> {
         e1?.treffpunkt == e2?.treffpunkt &&
         e1?.websiteUrl == e2?.websiteUrl &&
         e1?.country == e2?.country &&
-        e1?.city == e2?.city &&
         e1?.id == e2?.id &&
         e1?.fax == e2?.fax &&
         e1?.shortDescription == e2?.shortDescription &&
@@ -336,7 +335,8 @@ class EventsRecordDocumentEquality implements Equality<EventsRecord> {
         e1?.onlineBookable == e2?.onlineBookable &&
         e1?.description == e2?.description &&
         e1?.imageUrl == e2?.imageUrl &&
-        e1?.kategorien == e2?.kategorien;
+        e1?.kategorien == e2?.kategorien &&
+        e1?.city == e2?.city;
   }
 
   @override
@@ -352,7 +352,6 @@ class EventsRecordDocumentEquality implements Equality<EventsRecord> {
         e?.treffpunkt,
         e?.websiteUrl,
         e?.country,
-        e?.city,
         e?.id,
         e?.fax,
         e?.shortDescription,
@@ -370,7 +369,8 @@ class EventsRecordDocumentEquality implements Equality<EventsRecord> {
         e?.onlineBookable,
         e?.description,
         e?.imageUrl,
-        e?.kategorien
+        e?.kategorien,
+        e?.city
       ]);
 
   @override

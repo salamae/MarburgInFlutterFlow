@@ -100,7 +100,7 @@ class _EventListFavWidgetState extends State<EventListFavWidget> {
               ParamType.Document,
             ),
             'adresse': serializeParam(
-              '${widget.id?.address1 != null && widget.id?.address1 != '' ? '${widget.id?.address1}, ' : ' '}${widget.id?.address1 != null && widget.id?.address1 != '' ? '${widget.id?.zipCode}, ' : ' '}${widget.id?.address1 != null && widget.id?.address1 != '' ? '${widget.id?.city}, ' : ' '}${widget.id?.address1 != null && widget.id?.address1 != '' ? '${widget.id?.country}' : ' '}',
+              '${widget.id?.address1 != null && widget.id?.address1 != '' ? '${widget.id?.address1}, ' : ' '}${widget.id?.address1 != null && widget.id?.address1 != '' ? '${widget.id?.zipCode}, ' : ' '}${widget.id?.address1 != null && widget.id?.address1 != '' ? '${widget.id?.town}, ' : ' '}${widget.id?.address1 != null && widget.id?.address1 != '' ? '${widget.id?.country}' : ' '}',
               ParamType.String,
             ),
             'adresse1': serializeParam(
@@ -108,7 +108,7 @@ class _EventListFavWidgetState extends State<EventListFavWidget> {
               ParamType.String,
             ),
             'city': serializeParam(
-              widget.id?.city,
+              widget.id?.town,
               ParamType.String,
             ),
             'country': serializeParam(

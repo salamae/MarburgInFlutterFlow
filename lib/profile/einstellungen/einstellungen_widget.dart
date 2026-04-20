@@ -579,12 +579,36 @@ class _EinstellungenWidgetState extends State<EinstellungenWidget> {
                             if (FFAppState().notificationSwitch2) {
                               await actions.startLocationTracking(
                                 true,
-                                _model.events!.map((e) => e.address1).toList(),
+                                _model.events!
+                                    .map((e) => (String var1, String var2,
+                                                String var3, String var4) {
+                                          return var1 +
+                                              ", " +
+                                              var2 +
+                                              ", " +
+                                              var3 +
+                                              ", " +
+                                              var4;
+                                        }(e.address1, e.zipCode, e.town,
+                                            e.country))
+                                    .toList(),
                               );
                             } else {
                               await actions.startLocationTracking(
                                 false,
-                                _model.events!.map((e) => e.address1).toList(),
+                                _model.events!
+                                    .map((e) => (String var1, String var2,
+                                                String var3, String var4) {
+                                          return var1 +
+                                              ", " +
+                                              var2 +
+                                              ", " +
+                                              var3 +
+                                              ", " +
+                                              var4;
+                                        }(e.address1, e.zipCode, e.town,
+                                            e.country))
+                                    .toList(),
                               );
                             }
 

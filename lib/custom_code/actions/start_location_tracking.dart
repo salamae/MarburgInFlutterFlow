@@ -9,8 +9,7 @@ import 'package:flutter/material.dart';
 // Begin custom action code
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
-import '/custom_code/actions/index.dart';
-import '/flutter_flow/custom_functions.dart';
+// DO NOT REMOVE ABOVE
 
 import 'dart:async';
 import 'package:geolocator/geolocator.dart';
@@ -23,44 +22,50 @@ import 'package:timezone/data/latest.dart' as tz;
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
     FlutterLocalNotificationsPlugin();
 
-// 🔥 GLOBALS
+// 🔥 GLOBAL STATE
 StreamSubscription<Position>? _positionStream;
-final Set<String> _notifiedEvents = {};
-final Map<String, DateTime> _lastNotificationTime = {};
-final Map<String, Location> _cachedLocations = {}; // 🔥 wichtig!
+List<String> _currentAddresses = [];
 
-// 📏 Radius (JETZT 300M)
+final Set<String> _notifiedEvents = {};
+final Set<String> _failedAddresses = {};
+final Map<String, DateTime> _lastNotificationTime = {};
+final Map<String, Location> _cachedLocations = {};
+
+DateTime? _lastResetTime;
+
+// 📏 Radius
 const double EVENT_RADIUS = 300;
 
 // ⏱ Cooldown
 const Duration COOLDOWN = Duration(minutes: 30);
 
-/// 🚀 START TRACKING
+///////////////////////////////////////////////////////////////
+/// 🚀 START TRACKING (JETZT REALTIME)
+///////////////////////////////////////////////////////////////
+
 Future startLocationTracking(
   bool trackingEnabled,
-  List<String> eventAddresses, // 🔥 ALLE EVENTS HIER
+  List<String> eventAddresses,
 ) async {
-  print("🚀 Tracking gestartet");
-
   if (!trackingEnabled) {
     await stopLocationTracking();
     print("🔕 Tracking AUS");
     return;
   }
 
-  // ❗ verhindert mehrfaches Starten
+  _currentAddresses = eventAddresses;
+
   if (_positionStream != null) {
-    print("⚠️ Tracking läuft bereits");
+    print("🔄 Tracking läuft → Adressen aktualisiert");
     return;
   }
+
+  print("🚀 Tracking gestartet");
 
   tz.initializeTimeZones();
 
   LocationPermission permission = await Geolocator.requestPermission();
 
-  if (permission == LocationPermission.whileInUse) {
-    permission = await Geolocator.requestPermission();
-  }
   if (permission == LocationPermission.denied ||
       permission == LocationPermission.deniedForever) {
     print("❌ Keine Location Permission");
@@ -69,39 +74,123 @@ Future startLocationTracking(
 
   _positionStream = Geolocator.getPositionStream(
     locationSettings: LocationSettings(
-      accuracy: LocationAccuracy.high, // 🔥 besser für Akku
-      distanceFilter: 50, // 🔥 weniger Updates
+      accuracy: LocationAccuracy.best,
+      distanceFilter: 0, // 🔥 JEDES UPDATE
     ),
   ).listen((Position position) async {
     print("📍 Position: ${position.latitude}, ${position.longitude}");
 
-    await _checkNearbyEvents(position, eventAddresses);
+    // 🔥 IMMER CHECKEN
+    await _checkNearbyEvents(position);
   });
 }
 
+///////////////////////////////////////////////////////////////
 /// 🛑 STOP TRACKING
+///////////////////////////////////////////////////////////////
+
 Future stopLocationTracking() async {
   await _positionStream?.cancel();
   _positionStream = null;
   print("🛑 Tracking gestoppt");
 }
 
-/// 🔍 EVENTS CHECK
-Future _checkNearbyEvents(
-    Position position, List<String> eventAddresses) async {
-  for (String address in eventAddresses) {
+///////////////////////////////////////////////////////////////
+/// 🧠 NORMALIZE ADDRESS
+///////////////////////////////////////////////////////////////
+
+Map<String, String> normalizeAddressParts(String address) {
+  String clean = address
+      .toLowerCase()
+      .replaceAll("ß", "ss")
+      .replaceAll("straße", "strasse")
+      .replaceAll(RegExp(r'\s+'), ' ')
+      .trim();
+
+  final match = RegExp(r'(.+?)\s*(\d+[a-zA-Z]?)').firstMatch(clean);
+
+  if (match != null) {
+    return {
+      "street": match.group(1)!.trim(),
+      "number": match.group(2)!.trim(),
+    };
+  }
+
+  return {
+    "street": clean,
+    "number": "",
+  };
+}
+
+///////////////////////////////////////////////////////////////
+/// ❌ INVALID ADDRESS FILTER
+///////////////////////////////////////////////////////////////
+
+bool isInvalidAddress(String address) {
+  if (address.trim().isEmpty) return true;
+  if (address.contains("Postfach")) return true;
+  if (address.contains(", ,")) return true;
+  if (address.length < 8) return true;
+  return false;
+}
+
+///////////////////////////////////////////////////////////////
+/// 🔍 MAIN CHECK (IMMER ALLE EVENTS)
+///////////////////////////////////////////////////////////////
+
+Future _checkNearbyEvents(Position position) async {
+  // 🔥 reset failed addresses alle 2 Minuten
+  if (_lastResetTime == null ||
+      DateTime.now().difference(_lastResetTime!) > Duration(minutes: 2)) {
+    _failedAddresses.clear();
+    _lastResetTime = DateTime.now();
+  }
+
+  for (String rawAddress in _currentAddresses) {
     try {
+      if (_failedAddresses.contains(rawAddress)) continue;
+
+      if (isInvalidAddress(rawAddress)) {
+        _failedAddresses.add(rawAddress);
+        continue;
+      }
+
+      final parts = normalizeAddressParts(rawAddress);
+
+      String streetKey = parts["street"]!;
+      String number = parts["number"]!;
+      String fullKey = "${streetKey}_$number";
+
+      if (streetKey.contains("marburg") && number.isEmpty) {
+        _failedAddresses.add(rawAddress);
+        continue;
+      }
+
       Location loc;
 
-      // 🔥 CACHE verwenden (sehr wichtig!)
-      if (_cachedLocations.containsKey(address)) {
-        loc = _cachedLocations[address]!;
+      if (_cachedLocations.containsKey(rawAddress)) {
+        loc = _cachedLocations[rawAddress]!;
       } else {
-        List<Location> locations = await locationFromAddress(address);
-        if (locations.isEmpty) continue;
+        List<Location> locations;
+
+        try {
+          locations = await locationFromAddress(rawAddress);
+        } catch (e) {
+          try {
+            locations = await locationFromAddress(streetKey);
+          } catch (e) {
+            _failedAddresses.add(rawAddress);
+            continue;
+          }
+        }
+
+        if (locations.isEmpty) {
+          _failedAddresses.add(rawAddress);
+          continue;
+        }
 
         loc = locations.first;
-        _cachedLocations[address] = loc;
+        _cachedLocations[rawAddress] = loc;
       }
 
       double distance = Geolocator.distanceBetween(
@@ -111,42 +200,47 @@ Future _checkNearbyEvents(
         loc.longitude,
       );
 
-      print("📏 $address → ${distance.toInt()} m");
+      if (distance > 20000) continue;
 
-      // 🔥 nur wenn < 300m
+      print("📏 $rawAddress → ${distance.toInt()} m");
+
       if (distance <= EVENT_RADIUS) {
-        // ❌ schon benachrichtigt
-        if (_notifiedEvents.contains(address)) {
-          continue;
-        }
+        if (_notifiedEvents.contains(fullKey)) continue;
 
-        // ⏱ Cooldown
-        if (_lastNotificationTime.containsKey(address)) {
-          DateTime lastTime = _lastNotificationTime[address]!;
-
-          if (DateTime.now().difference(lastTime) < COOLDOWN) {
+        if (_lastNotificationTime.containsKey(fullKey)) {
+          if (DateTime.now().difference(_lastNotificationTime[fullKey]!) <
+              COOLDOWN) {
             continue;
           }
         }
 
-        _notifiedEvents.add(address);
-        _lastNotificationTime[address] = DateTime.now();
+        _notifiedEvents.add(fullKey);
+        _lastNotificationTime[fullKey] = DateTime.now();
 
         print("🔥 EVENT IN DER NÄHE!");
 
         await _showNotification(
           "Event in deiner Nähe 🎉",
-          "$address ist nur ${distance.toInt()}m entfernt!",
+          "$rawAddress ist nur ${distance.toInt()}m entfernt!",
+          fullKey,
         );
       }
     } catch (e) {
-      print("❌ Fehler bei $address → $e");
+      print("❌ Fehler bei $rawAddress → $e");
+      _failedAddresses.add(rawAddress);
     }
   }
 }
 
+///////////////////////////////////////////////////////////////
 /// 🔔 NOTIFICATION
-Future _showNotification(String title, String body) async {
+///////////////////////////////////////////////////////////////
+
+Future _showNotification(
+  String title,
+  String body,
+  String eventId,
+) async {
   const AndroidInitializationSettings androidSettings =
       AndroidInitializationSettings('@mipmap/ic_launcher');
 
@@ -158,19 +252,21 @@ Future _showNotification(String title, String body) async {
     iOS: iosSettings,
   );
 
-  await flutterLocalNotificationsPlugin.initialize(initSettings);
+  await flutterLocalNotificationsPlugin.initialize(
+    initSettings,
 
-  const AndroidNotificationChannel channel = AndroidNotificationChannel(
-    'nearby_events',
-    'Nearby Events',
-    description: 'Events in deiner Nähe',
-    importance: Importance.max,
+    // 🔥 DAS IST DER WICHTIGE TEIL
+    onDidReceiveNotificationResponse: (response) {
+      final payload = response.payload;
+
+      if (payload != null) {
+        print("📲 Notification geklickt → $payload");
+
+        // 🔥 HIER SPEICHERN
+        FFAppState().selectedEventId = payload;
+      }
+    },
   );
-
-  await flutterLocalNotificationsPlugin
-      .resolvePlatformSpecificImplementation<
-          AndroidFlutterLocalNotificationsPlugin>()
-      ?.createNotificationChannel(channel);
 
   const AndroidNotificationDetails androidDetails = AndroidNotificationDetails(
     'nearby_events',
@@ -183,12 +279,11 @@ Future _showNotification(String title, String body) async {
   const NotificationDetails notificationDetails =
       NotificationDetails(android: androidDetails);
 
-  final tz.TZDateTime now = tz.TZDateTime.from(DateTime.now(), tz.local);
-
   await flutterLocalNotificationsPlugin.show(
     DateTime.now().millisecondsSinceEpoch ~/ 1000,
     title,
     body,
     notificationDetails,
+    payload: eventId,
   );
 }

@@ -697,7 +697,7 @@ class _EventDetailsStoebernWidgetState
                                                     ParamType.Document,
                                                   ),
                                                   'adresse': serializeParam(
-                                                    '${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.address1}, ' : ' '}${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.zipCode}, ' : ' '}${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.city}, ' : ' '}${widget.address1 != null && widget.address1 != '' ? '${listViewEventsRecord.country}' : ' '}',
+                                                    '${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.address1}, ' : ' '}${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.zipCode}, ' : ' '}${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.town}, ' : ' '}${widget.address1 != null && widget.address1 != '' ? '${listViewEventsRecord.country}' : ' '}',
                                                     ParamType.String,
                                                   ),
                                                   'adresse1': serializeParam(
@@ -706,7 +706,7 @@ class _EventDetailsStoebernWidgetState
                                                     ParamType.String,
                                                   ),
                                                   'city': serializeParam(
-                                                    listViewEventsRecord.city,
+                                                    listViewEventsRecord.town,
                                                     ParamType.String,
                                                   ),
                                                   'country': serializeParam(

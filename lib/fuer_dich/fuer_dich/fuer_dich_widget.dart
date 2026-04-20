@@ -211,7 +211,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                                               ParamType.Document,
                                             ),
                                             'adresse': serializeParam(
-                                              '${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.address1}, ' : ' '}${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.zipCode}, ' : ' '}${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.city}, ' : ' '}${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.country}' : ' '}',
+                                              '${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.address1}, ' : ' '}${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.zipCode}, ' : ' '}${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.town}, ' : ' '}${listViewEventsRecord.address1 != '' ? '${listViewEventsRecord.country}' : ' '}',
                                               ParamType.String,
                                             ),
                                             'adresse1': serializeParam(
@@ -219,7 +219,7 @@ class _FuerDichWidgetState extends State<FuerDichWidget> {
                                               ParamType.String,
                                             ),
                                             'city': serializeParam(
-                                              listViewEventsRecord.city,
+                                              listViewEventsRecord.town,
                                               ParamType.String,
                                             ),
                                             'country': serializeParam(

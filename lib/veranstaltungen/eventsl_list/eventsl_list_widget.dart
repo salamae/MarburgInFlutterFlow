@@ -110,7 +110,7 @@ class _EventslListWidgetState extends State<EventslListWidget> {
                 ParamType.Document,
               ),
               'adresse': serializeParam(
-                '${widget.eventID?.address1 != null && widget.eventID?.address1 != '' ? '${widget.eventID?.address1}, ' : ' '}${widget.eventID?.address1 != null && widget.eventID?.address1 != '' ? '${widget.eventID?.zipCode}, ' : ' '}${widget.eventID?.address1 != null && widget.eventID?.address1 != '' ? '${widget.eventID?.city}, ' : ' '}${widget.eventID?.address1 != null && widget.eventID?.address1 != '' ? '${widget.eventID?.country}' : ' '}',
+                '${widget.eventID?.address1 != null && widget.eventID?.address1 != '' ? '${widget.eventID?.address1}, ' : ' '}${widget.eventID?.address1 != null && widget.eventID?.address1 != '' ? '${widget.eventID?.zipCode}, ' : ' '}${widget.eventID?.address1 != null && widget.eventID?.address1 != '' ? '${widget.eventID?.town}, ' : ' '}${widget.eventID?.address1 != null && widget.eventID?.address1 != '' ? '${widget.eventID?.country}' : ' '}',
                 ParamType.String,
               ),
               'adresse1': serializeParam(
@@ -118,7 +118,7 @@ class _EventslListWidgetState extends State<EventslListWidget> {
                 ParamType.String,
               ),
               'city': serializeParam(
-                widget.eventID?.city,
+                widget.eventID?.town,
                 ParamType.String,
               ),
               'country': serializeParam(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'flutter_flow/flutter_flow_util.dart';
 
 class FFAppState extends ChangeNotifier {
   static FFAppState _instance = FFAppState._internal();
@@ -68,10 +67,6 @@ class FFAppState extends ChangeNotifier {
       _parkingLots = prefs.getStringList('ff_parkingLots') ?? _parkingLots;
     });
     _safeInit(() {
-      _userLocation =
-          latLngFromString(prefs.getString('ff_userLocation')) ?? _userLocation;
-    });
-    _safeInit(() {
       _eventLocation = prefs.getString('ff_eventLocation') ?? _eventLocation;
     });
     _safeInit(() {
@@ -105,6 +100,10 @@ class FFAppState extends ChangeNotifier {
     });
     _safeInit(() {
       _platz5 = prefs.getBool('ff_platz5') ?? _platz5;
+    });
+    _safeInit(() {
+      _selectedEventId =
+          prefs.getString('ff_selectedEventId') ?? _selectedEventId;
     });
   }
 
@@ -362,15 +361,6 @@ class FFAppState extends ChangeNotifier {
     prefs.setStringList('ff_parkingLots', _parkingLots);
   }
 
-  LatLng? _userLocation;
-  LatLng? get userLocation => _userLocation;
-  set userLocation(LatLng? value) {
-    _userLocation = value;
-    value != null
-        ? prefs.setString('ff_userLocation', value.serialize())
-        : prefs.remove('ff_userLocation');
-  }
-
   String _eventLocation = '';
   String get eventLocation => _eventLocation;
   set eventLocation(String value) {
@@ -439,6 +429,13 @@ class FFAppState extends ChangeNotifier {
   set platz5(bool value) {
     _platz5 = value;
     prefs.setBool('ff_platz5', value);
+  }
+
+  String _selectedEventId = '';
+  String get selectedEventId => _selectedEventId;
+  set selectedEventId(String value) {
+    _selectedEventId = value;
+    prefs.setString('ff_selectedEventId', value);
   }
 }
 
