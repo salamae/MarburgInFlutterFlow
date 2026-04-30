@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/widgets/index.dart' as custom_widgets;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -573,7 +574,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                         ),
                       if (!(widget.idBuchen != null))
                         Text(
-                          widget.longDes!,
+                          functions.htmlToText(widget.longDes!),
                           style:
                               FlutterFlowTheme.of(context).bodyLarge.override(
                                     font: GoogleFonts.inter(
@@ -1054,7 +1055,7 @@ class _DetailsWidgetState extends State<DetailsWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 20.0),
                           child: Text(
-                            widget.longDes!,
+                            functions.htmlToText(widget.longDes!),
                             style:
                                 FlutterFlowTheme.of(context).bodyLarge.override(
                                       font: GoogleFonts.inter(
