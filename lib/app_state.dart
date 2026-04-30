@@ -17,7 +17,7 @@ class FFAppState extends ChangeNotifier {
   Future initializePersistedState() async {
     prefs = await SharedPreferences.getInstance();
     _safeInit(() {
-      _TestPagesIndex = prefs.getInt('ff_TestPagesIndex') ?? _TestPagesIndex;
+      _pagesIndex = prefs.getInt('ff_pagesIndex') ?? _pagesIndex;
     });
     _safeInit(() {
       _selectedDate = prefs.containsKey('ff_selectedDate')
@@ -114,11 +114,11 @@ class FFAppState extends ChangeNotifier {
 
   late SharedPreferences prefs;
 
-  int _TestPagesIndex = 0;
-  int get TestPagesIndex => _TestPagesIndex;
-  set TestPagesIndex(int value) {
-    _TestPagesIndex = value;
-    prefs.setInt('ff_TestPagesIndex', value);
+  int _pagesIndex = 0;
+  int get pagesIndex => _pagesIndex;
+  set pagesIndex(int value) {
+    _pagesIndex = value;
+    prefs.setInt('ff_pagesIndex', value);
   }
 
   DateTime? _selectedDate;

@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'eventsl_list_widget.dart' show EventslListWidget;
+import 'events_list_widget.dart' show EventsListWidget;
 import 'package:flutter/material.dart';
 
-class EventslListModel extends FlutterFlowModel<EventslListWidget> {
+class EventsListModel extends FlutterFlowModel<EventsListWidget> {
   @override
   void initState(BuildContext context) {}
 

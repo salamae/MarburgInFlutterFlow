@@ -4,7 +4,7 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/veranstaltungen/eventsl_list/eventsl_list_widget.dart';
+import '/veranstaltungen/events_list/events_list_widget.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -38,7 +38,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
     _model = createModel(context, () => VeranstaltungenModel());
 
     animationsMap.addAll({
-      'eventslListOnPageLoadAnimation1': AnimationInfo(
+      'eventsListOnPageLoadAnimation1': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           MoveEffect(
@@ -50,7 +50,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
           ),
         ],
       ),
-      'eventslListOnPageLoadAnimation2': AnimationInfo(
+      'eventsListOnPageLoadAnimation2': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           MoveEffect(
@@ -62,7 +62,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
           ),
         ],
       ),
-      'eventslListOnPageLoadAnimation3': AnimationInfo(
+      'eventsListOnPageLoadAnimation3': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           MoveEffect(
@@ -74,7 +74,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
           ),
         ],
       ),
-      'eventslListOnPageLoadAnimation4': AnimationInfo(
+      'eventsListOnPageLoadAnimation4': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           MoveEffect(
@@ -86,7 +86,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
           ),
         ],
       ),
-      'eventslListOnPageLoadAnimation5': AnimationInfo(
+      'eventsListOnPageLoadAnimation5': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
         effectsBuilder: () => [
           MoveEffect(
@@ -146,11 +146,11 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                             20.0, 0.0, 10.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            if (FFAppState().TestPagesIndex != 1) {
-                              FFAppState().TestPagesIndex = 1;
+                            if (FFAppState().pagesIndex != 1) {
+                              FFAppState().pagesIndex = 1;
                               FFAppState().update(() {});
                             } else {
-                              FFAppState().TestPagesIndex = 0;
+                              FFAppState().pagesIndex = 0;
                               FFAppState().update(() {});
                             }
                           },
@@ -162,7 +162,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                             iconAlignment: IconAlignment.start,
                             iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: FFAppState().TestPagesIndex == 1
+                            color: FFAppState().pagesIndex == 1
                                 ? Color(0xFFD02718)
                                 : Color(0xFFE5E5EA),
                             textStyle: FlutterFlowTheme.of(context)
@@ -174,7 +174,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                                         .titleSmall
                                         .fontStyle,
                                   ),
-                                  color: FFAppState().TestPagesIndex == 1
+                                  color: FFAppState().pagesIndex == 1
                                       ? Colors.white
                                       : Colors.black,
                                   letterSpacing: 0.0,
@@ -193,11 +193,11 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            if (FFAppState().TestPagesIndex != 2) {
-                              FFAppState().TestPagesIndex = 2;
+                            if (FFAppState().pagesIndex != 2) {
+                              FFAppState().pagesIndex = 2;
                               FFAppState().update(() {});
                             } else {
-                              FFAppState().TestPagesIndex = 0;
+                              FFAppState().pagesIndex = 0;
                               FFAppState().update(() {});
                             }
                           },
@@ -208,7 +208,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                                 16.0, 0.0, 16.0, 0.0),
                             iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: FFAppState().TestPagesIndex == 2
+                            color: FFAppState().pagesIndex == 2
                                 ? Color(0xFFD02718)
                                 : Color(0xFFE5E5EA),
                             textStyle: FlutterFlowTheme.of(context)
@@ -220,7 +220,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                                         .titleSmall
                                         .fontStyle,
                                   ),
-                                  color: FFAppState().TestPagesIndex == 2
+                                  color: FFAppState().pagesIndex == 2
                                       ? Colors.white
                                       : Colors.black,
                                   letterSpacing: 0.0,
@@ -239,11 +239,11 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            if (FFAppState().TestPagesIndex != 3) {
-                              FFAppState().TestPagesIndex = 3;
+                            if (FFAppState().pagesIndex != 3) {
+                              FFAppState().pagesIndex = 3;
                               FFAppState().update(() {});
                             } else {
-                              FFAppState().TestPagesIndex = 0;
+                              FFAppState().pagesIndex = 0;
                               FFAppState().update(() {});
                             }
                           },
@@ -254,7 +254,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                                 16.0, 0.0, 16.0, 0.0),
                             iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            color: FFAppState().TestPagesIndex == 3
+                            color: FFAppState().pagesIndex == 3
                                 ? Color(0xFFD02718)
                                 : Color(0xFFE5E5EA),
                             textStyle: FlutterFlowTheme.of(context)
@@ -266,7 +266,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                                         .titleSmall
                                         .fontStyle,
                                   ),
-                                  color: FFAppState().TestPagesIndex == 3
+                                  color: FFAppState().pagesIndex == 3
                                       ? Colors.white
                                       : Colors.black,
                                   letterSpacing: 0.0,
@@ -339,13 +339,13 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                               _model.datePicked = getCurrentTimestamp;
                             });
                           }
-                          FFAppState().TestPagesIndex = 4;
+                          FFAppState().pagesIndex = 4;
                           safeSetState(() {});
                           FFAppState().selectedDate = FFAppState().selectedDate;
                           safeSetState(() {});
                         },
                         text: valueOrDefault<String>(
-                          FFAppState().TestPagesIndex == 4
+                          FFAppState().pagesIndex == 4
                               ? dateTimeFormat("d.M.y", _model.datePicked)
                               : 'Datum',
                           'Datum wählen',
@@ -356,7 +356,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                               16.0, 0.0, 16.0, 0.0),
                           iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: FFAppState().TestPagesIndex == 4
+                          color: FFAppState().pagesIndex == 4
                               ? Color(0xFFD02718)
                               : Color(0xFFE5E5EA),
                           textStyle:
@@ -367,7 +367,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                                           .titleSmall
                                           .fontStyle,
                                     ),
-                                    color: FFAppState().TestPagesIndex == 4
+                                    color: FFAppState().pagesIndex == 4
                                         ? Colors.white
                                         : Colors.black,
                                     letterSpacing: 0.0,
@@ -393,7 +393,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
               child: Stack(
                 children: [
                   if (valueOrDefault<bool>(
-                    FFAppState().TestPagesIndex == 0,
+                    FFAppState().pagesIndex == 0,
                     true,
                   ))
                     Column(
@@ -452,7 +452,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                                         listViewEventsRecordList[listViewIndex];
                                     return Visibility(
                                       visible: listViewEventsRecord.imageUrl != '',
-                                      child: EventslListWidget(
+                                      child: EventsListWidget(
                                         key: Key(
                                             'Key1u5_${listViewIndex}_of_${listViewEventsRecordList.length}'),
                                         name: listViewEventsRecord.name,
@@ -473,7 +473,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                                           size: 20.0,
                                         ),
                                       ).animateOnPageLoad(animationsMap[
-                                          'eventslListOnPageLoadAnimation1']!),
+                                          'eventsListOnPageLoadAnimation1']!),
                                     );
                                   },
                                 );
@@ -483,7 +483,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                         ),
                       ],
                     ),
-                  if (FFAppState().TestPagesIndex == 1)
+                  if (FFAppState().pagesIndex == 1)
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -549,7 +549,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                                         listViewEventsRecordList[listViewIndex];
                                     return Visibility(
                                       visible: listViewEventsRecord.imageUrl != '',
-                                      child: EventslListWidget(
+                                      child: EventsListWidget(
                                         key: Key(
                                             'Key9ei_${listViewIndex}_of_${listViewEventsRecordList.length}'),
                                         name: listViewEventsRecord.name,
@@ -570,7 +570,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                                           size: 20.0,
                                         ),
                                       ).animateOnPageLoad(animationsMap[
-                                          'eventslListOnPageLoadAnimation2']!),
+                                          'eventsListOnPageLoadAnimation2']!),
                                     );
                                   },
                                 );
@@ -580,7 +580,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                         ),
                       ],
                     ),
-                  if (FFAppState().TestPagesIndex == 2)
+                  if (FFAppState().pagesIndex == 2)
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -641,7 +641,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                                         listViewEventsRecordList[listViewIndex];
                                     return Visibility(
                                       visible: listViewEventsRecord.imageUrl != '',
-                                      child: EventslListWidget(
+                                      child: EventsListWidget(
                                         key: Key(
                                             'Keyc74_${listViewIndex}_of_${listViewEventsRecordList.length}'),
                                         name: listViewEventsRecord.name,
@@ -662,7 +662,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                                           size: 20.0,
                                         ),
                                       ).animateOnPageLoad(animationsMap[
-                                          'eventslListOnPageLoadAnimation3']!),
+                                          'eventsListOnPageLoadAnimation3']!),
                                     );
                                   },
                                 );
@@ -672,7 +672,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                         ),
                       ],
                     ),
-                  if (FFAppState().TestPagesIndex == 3)
+                  if (FFAppState().pagesIndex == 3)
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -740,7 +740,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                                         listViewEventsRecordList[listViewIndex];
                                     return Visibility(
                                       visible: listViewEventsRecord.imageUrl != '',
-                                      child: EventslListWidget(
+                                      child: EventsListWidget(
                                         key: Key(
                                             'Keydvt_${listViewIndex}_of_${listViewEventsRecordList.length}'),
                                         name: listViewEventsRecord.name,
@@ -761,7 +761,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                                           size: 20.0,
                                         ),
                                       ).animateOnPageLoad(animationsMap[
-                                          'eventslListOnPageLoadAnimation4']!),
+                                          'eventsListOnPageLoadAnimation4']!),
                                     );
                                   },
                                 );
@@ -771,7 +771,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                         ),
                       ],
                     ),
-                  if (FFAppState().TestPagesIndex == 4)
+                  if (FFAppState().pagesIndex == 4)
                     Column(
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -834,7 +834,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                                         listViewEventsRecordList[listViewIndex];
                                     return Visibility(
                                       visible: listViewEventsRecord.imageUrl != '',
-                                      child: EventslListWidget(
+                                      child: EventsListWidget(
                                         key: Key(
                                             'Keyd44_${listViewIndex}_of_${listViewEventsRecordList.length}'),
                                         name: listViewEventsRecord.name,
@@ -855,7 +855,7 @@ class _VeranstaltungenWidgetState extends State<VeranstaltungenWidget>
                                           size: 20.0,
                                         ),
                                       ).animateOnPageLoad(animationsMap[
-                                          'eventslListOnPageLoadAnimation5']!),
+                                          'eventsListOnPageLoadAnimation5']!),
                                     );
                                   },
                                 );

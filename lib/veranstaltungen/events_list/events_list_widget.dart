@@ -8,11 +8,11 @@ import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'eventsl_list_model.dart';
-export 'eventsl_list_model.dart';
+import 'events_list_model.dart';
+export 'events_list_model.dart';
 
-class EventslListWidget extends StatefulWidget {
-  const EventslListWidget({
+class EventsListWidget extends StatefulWidget {
+  const EventsListWidget({
     super.key,
     this.name,
     this.description,
@@ -34,11 +34,11 @@ class EventslListWidget extends StatefulWidget {
   final EventsRecord? eventID;
 
   @override
-  State<EventslListWidget> createState() => _EventslListWidgetState();
+  State<EventsListWidget> createState() => _EventsListWidgetState();
 }
 
-class _EventslListWidgetState extends State<EventslListWidget> {
-  late EventslListModel _model;
+class _EventsListWidgetState extends State<EventsListWidget> {
+  late EventsListModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -49,7 +49,7 @@ class _EventslListWidgetState extends State<EventslListWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EventslListModel());
+    _model = createModel(context, () => EventsListModel());
   }
 
   @override
