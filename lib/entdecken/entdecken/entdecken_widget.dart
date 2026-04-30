@@ -831,7 +831,7 @@ class _EntdeckenWidgetState extends State<EntdeckenWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   15.0, 10.0, 0.0, 0.0),
                               child: Text(
-                                'Akivitäten',
+                                'Aktivitäten',
                                 style: FlutterFlowTheme.of(context)
                                     .titleLarge
                                     .override(
