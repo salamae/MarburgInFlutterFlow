@@ -2,10 +2,12 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
 import '/index.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'event_list_fav_model.dart';
 export 'event_list_fav_model.dart';
 
@@ -55,6 +57,8 @@ class _EventListFavWidgetState extends State<EventListFavWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return InkWell(
       splashColor: Colors.transparent,
       focusColor: Colors.transparent,
@@ -321,6 +325,15 @@ class _EventListFavWidgetState extends State<EventListFavWidget> {
                           },
                         ),
                       });
+                      await actions.scheduleEventNotification(
+                        widget.name!,
+                        widget.description!,
+                        widget.time!,
+                        FFAppState().notificationSwitch,
+                        FFAppState().min30 ? 30 : 60,
+                        widget.id!.reference.id,
+                        false,
+                      );
                     } else {
                       FFAppState().removeFromFavoriteEventIdsGuest(
                           widget.id!.reference.id);

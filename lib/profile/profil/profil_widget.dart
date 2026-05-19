@@ -2168,6 +2168,9 @@ class _ProfilWidgetState extends State<ProfilWidget> {
                           await authManager.signOut();
                           GoRouter.of(context).clearRedirectLocation();
 
+                          FFAppState().favoriteEventIdsGuest = [];
+                          safeSetState(() {});
+
                           context.goNamedAuth(
                               LoginViewWidget.routeName, context.mounted);
                         },
