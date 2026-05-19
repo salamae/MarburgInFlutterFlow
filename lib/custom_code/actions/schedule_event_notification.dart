@@ -14,7 +14,7 @@ import '/flutter_flow/custom_functions.dart';
 
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/timezone.dart' as tz;
-import 'package:timezone/data/latest.dart' as tz;
+import 'package:timezone/data/latest.dart' as tzdata;
 
 // Plugin Instanz
 final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
@@ -29,7 +29,7 @@ Future scheduleEventNotification(
   String eventId,
   bool isFavorite,
 ) async {
-  tz.initializeTimeZones();
+  tzdata.initializeTimeZones();
 
   // 🔴 Wenn Switch AUS → alles löschen
   if (!notificationsEnabled) {

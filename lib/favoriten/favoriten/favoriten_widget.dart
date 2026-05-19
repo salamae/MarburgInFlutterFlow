@@ -147,9 +147,9 @@ class _FavoritenWidgetState extends State<FavoritenWidget> {
                                                 Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          4.0, 0.0, 0.0, 20.0),
+                                                          4.0, 20.0, 0.0, 20.0),
                                                   child: Text(
-                                                    functions.stoebernDate(
+                                                    functions.favDate(
                                                         test1Item.toString())!,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -287,9 +287,9 @@ class _FavoritenWidgetState extends State<FavoritenWidget> {
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        4.0, 0.0, 0.0, 20.0),
+                                                        4.0, 20.0, 0.0, 20.0),
                                                 child: Text(
-                                                  functions.stoebernDate(
+                                                  functions.favDate(
                                                       testItem.toString())!,
                                                   style: FlutterFlowTheme.of(
                                                           context)

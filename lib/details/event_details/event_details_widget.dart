@@ -509,6 +509,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
+                        var _shouldSetState = false;
                         _model.saved = await actions.saveEventAndShowIOSDetails(
                           widget.title!,
                           widget.date!,
@@ -517,6 +518,7 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                           widget.shortDes!,
                           widget.adresse!,
                         );
+                        _shouldSetState = true;
                         if (_model.saved!) {
                           await showDialog(
                             barrierColor: Color(0x28000000),
@@ -539,9 +541,12 @@ class _EventDetailsWidgetState extends State<EventDetailsWidget> {
                               );
                             },
                           );
+                        } else {
+                          if (_shouldSetState) safeSetState(() {});
+                          return;
                         }
 
-                        safeSetState(() {});
+                        if (_shouldSetState) safeSetState(() {});
                       },
                       text: 'Zu Kalender hinzufügen',
                       icon: Icon(
